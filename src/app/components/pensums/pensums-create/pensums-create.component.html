@@ -1,0 +1,73 @@
+<!-- create.component.html -->
+
+<div class="card">
+  <div class="card-body">
+    <form [formGroup]="pensumsForm" novalidate>
+      <div class="form-group">
+        <label class="col-md-4">Id Carrera</label>
+        <input type="text" class="form-control" name="id_carrera" formControlName="id_carrera" #id_carrera />
+      </div>
+      <div *ngIf="pensumsForm.controls['id_carrera'].invalid && (pensumsForm.controls['id_carrera'].dirty || pensumsForm.controls['id_carrera'].touched)"
+        class="alert alert-danger">
+        <div *ngIf="pensumsForm.controls['id_carrera'].errors.required">
+          id_carrera is required.
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="col-md-4">Descripcion Carrera</label>
+        <input type="text" class="form-control" name="desc_carrera" formControlName="desc_carrera" #desc_carrera />
+      </div>
+      <div *ngIf="pensumsForm.controls['desc_carrera'].invalid && (pensumsForm.controls['desc_carrera'].dirty || pensumsForm.controls['desc_carrera'].touched)"
+        class="alert alert-danger">
+        <div *ngIf="pensumsForm.controls['desc_carrera'].errors.required">
+          desc_carrera is required.
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="col-md-4">Id Clase</label>
+        <input type="text" class="form-control" name="id_clase" formControlName="id_clase" #id_clase />
+      </div>
+      <div *ngIf="pensumsForm.controls['id_clase'].invalid && (pensumsForm.controls['id_clase'].dirty || pensumsForm.controls['id_clase'].touched)"
+        class="alert alert-danger">
+        <div *ngIf="pensumsForm.controls['id_clase'].errors.required">
+          id_clase is required.
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="col-md-4">Descripcion Clase</label>
+        <input type="text" class="form-control" name="desc_clase" formControlName="desc_clase" #desc_clase />
+      </div>
+      <div *ngIf="pensumsForm.controls['desc_clase'].invalid && (pensumsForm.controls['desc_clase'].dirty || pensumsForm.controls['desc_clase'].touched)"
+        class="alert alert-danger">
+        <div *ngIf="pensumsForm.controls['desc_clase'].errors.required">
+          Unit Price is required.
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="col-md-4">Id Requisito</label>
+        <input type="text" class="form-control" name="id_requisito" formControlName="id_requisito" #id_requisito />
+      </div>
+      <div *ngIf="pensumsForm.controls['id_requisito'].invalid && (pensumsForm.controls['id_requisito'].dirty || pensumsForm.controls['id_requisito'].touched)"
+        class="alert alert-danger">
+        <div *ngIf="pensumsForm.controls['id_requisito'].errors.required">
+          Unit Price is required.
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="col-md-4">Descripcion Requisito</label>
+        <input type="text" class="form-control" name="desc_requisito" formControlName="desc_requisito" #desc_requisito />
+      </div>
+      <div *ngIf="pensumsForm.controls['desc_requisito'].invalid && (pensumsForm.controls['desc_requisito'].dirty || pensumsForm.controls['desc_requisito'].touched)"
+        class="alert alert-danger">
+        <div *ngIf="pensumsForm.controls['desc_requisito'].errors.required">
+          desc_requisito is required.
+        </div>
+      </div>
+
+      <div class="form-group">
+        <button (click)="agregarClaseEnPensum(id_carrera.value, desc_carrera.value, id_clase.value, desc_clase.value,id_requisito.value,desc_requisito.value)" [disabled]="pensumsForm.pristine || pensumsForm.invalid"
+          class="btn btn-primary">Create Unit</button>
+      </div>
+    </form>
+  </div>
+</div>
