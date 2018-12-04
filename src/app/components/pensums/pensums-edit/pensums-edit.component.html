@@ -1,3 +1,70 @@
-<p>
-  pensums-edit works!
-</p>
+<div class="card">
+  <div class="card-body">
+    <form [formGroup]="angForm" novalidate>
+      <div class="form-group">
+        <label class="col-md-4">Id Carrera</label>
+        <input type="text" class="form-control" name="id_carrera" formControlName="id_carrera" #id_carrera [(ngModel)]="pensums.id_carrera" />
+      </div>
+      <div *ngIf="angForm.controls['id_carrera'].invalid && (angForm.controls['id_carrera'].dirty || angForm.controls['id_carrera'].touched)"
+        class="alert alert-danger">
+        <div *ngIf="angForm.controls['id_carrera'].errors.required">
+          id_carrera is required.
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="col-md-4">Descripcion Carrera</label>
+        <input type="text" class="form-control" name="desc_carrera" formControlName="desc_carrera" #desc_carrera [(ngModel)]="pensums.desc_carrera" />
+      </div>
+      <div *ngIf="angForm.controls['desc_carrera'].invalid && (angForm.controls['desc_carrera'].dirty || angForm.controls['desc_carrera'].touched)"
+        class="alert alert-danger">
+        <div *ngIf="angForm.controls['desc_carrera'].errors.required">
+          desc_carrera is required.
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="col-md-4">Id Clase</label>
+        <input type="text" class="form-control" name="id_clase" formControlName="id_clase" #id_clase [(ngModel)]="pensums.id_clase" />
+      </div>
+      <div *ngIf="angForm.controls['id_clase'].invalid && (angForm.controls['id_clase'].dirty || angForm.controls['id_clase'].touched)"
+        class="alert alert-danger">
+        <div *ngIf="angForm.controls['id_clase'].errors.required">
+          id_clase is required.
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="col-md-4">Descripcion Clase</label>
+        <input type="text" class="form-control" name="desc_clase" formControlName="desc_clase" #desc_clase [(ngModel)]="pensums.desc_clase" />
+      </div>
+      <div *ngIf="angForm.controls['desc_clase'].invalid && (angForm.controls['desc_clase'].dirty || angForm.controls['desc_clase'].touched)"
+        class="alert alert-danger">
+        <div *ngIf="angForm.controls['desc_clase'].errors.required">
+          id_clase is required.
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="col-md-4">Id Requisito</label>
+        <input type="text" class="form-control" name="id_requisito" formControlName="id_requisito" #id_requisito [(ngModel)]="pensums.id_requisito" />
+      </div>
+      <div *ngIf="angForm.controls['id_requisito'].invalid && (angForm.controls['id_requisito'].dirty || angForm.controls['id_requisito'].touched)"
+        class="alert alert-danger">
+        <div *ngIf="angForm.controls['id_requisito'].errors.required">
+          id_requisito is required.
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="col-md-4">Descripcion Requisito</label>
+        <input type="text" class="form-control" name="desc_requisito" formControlName="desc_requisito" #desc_requisito [(ngModel)]="pensums.desc_requisito" />
+      </div>
+      <div *ngIf="angForm.controls['desc_requisito'].invalid && (angForm.controls['desc_requisito'].dirty || angForm.controls['desc_requisito'].touched)"
+        class="alert alert-danger">
+        <div *ngIf="angForm.controls['desc_requisito'].errors.required">
+          desc_requisito is required.
+        </div>
+      </div>
+      <div class="form-group">
+        <button (click)="updateItem(id_carrera.value, desc_carrera.value, id_clase.value, desc_clase.value,id_requisito.value,desc_requisito.value)" [disabled]="angForm.invalid" class="btn btn-primary">Update
+          Unit</button>
+      </div>
+    </form>
+  </div>
+</div>
