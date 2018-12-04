@@ -1,4 +1,7 @@
+import { IPensums } from './IPensums';
 import { Component, OnInit } from '@angular/core';
+import { PensumsService } from './../../../services/pensums.service';
+
 
 @Component({
   selector: 'app-pensums-index',
@@ -7,9 +10,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PensumsIndexComponent implements OnInit {
 
-  constructor() { }
+  pensums: IPensums[];
+
+  constructor(private pensumsService: PensumsService) { }
 
   ngOnInit() {
+    this.pensumsService
+      .listarTodasLasAsignaturas()
+      .subscribe((data: IPensums[]) => {
+        this.pensums = data;
+      });
   }
 
 }

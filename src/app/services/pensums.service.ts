@@ -1,3 +1,5 @@
+
+import { IPensums } from './../components/pensums/pensums-index/IPensums';
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
@@ -22,4 +24,10 @@ export class PensumsService {
     this.http.post(`${this.uri}`, obj)
       .subscribe(res => console.log('Done'));
   }
+
+  listarTodasLasAsignaturas() {
+    return this
+           .http
+           .get(`${this.uri}`);
+    }
 }
