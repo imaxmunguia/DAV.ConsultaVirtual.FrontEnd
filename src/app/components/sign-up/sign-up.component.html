@@ -1,0 +1,47 @@
+<div id="LoginForm">
+    <div class="container">
+      <div class="login-form">
+        <div class="main-div">
+          <div class="panel">
+            <h2>Registro de alumno</h2>
+            <p></p>
+            {{pensums}}
+            <h1 ng-repeat="pensum of pensums">
+                    {{pensum}}
+            </h1>
+          </div>
+            <form ng-submit="submit">
+                <div class="form-group">
+                    <input type="text" class="form-control" id="inputNombre" placeholder="Pedro">
+                </div>
+                <div class="form-group">
+                    <input type="text" class="form-control" id="inputApellido" placeholder="Perez">
+                </div>
+                <div class="form-group">
+                    <input type="email" class="form-control" id="inputEmail" placeholder="Email Address">
+                </div>
+                <div class="form-group">
+                    <select class="form-control">
+                        <option ng-repeat="pensum in pensums">
+                            {{pensum}}
+                        </option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <input type="text" class="form-control" id="inputNoCuenta" placeholder="2018010101">
+                </div>
+                <div class="form-group">  
+                    <input type="password" class="form-control" id="inputPassword" placeholder="Password">
+                </div>
+                <div class="form-group">  
+                    <input type="password" class="form-control" id="inputPassword" placeholder="Password">
+                </div>
+                <button type="submit" class="btn btn-primary">Registrarme</button>
+            </form>
+            <a routerLink="signup" class="nav-link" routerLinkActive="active">
+                Ya tienes una cuenta? Inicia Sesion!
+            </a>
+        </div>
+      </div>
+    </div>
+  </div>
