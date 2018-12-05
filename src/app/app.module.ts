@@ -25,6 +25,7 @@ import {NgxMaterialTimepickerModule} from 'ngx-material-timepicker';
 import {UsuariosService} from './services/usuarios.service';
 import { TokenInterceptor } from './interceptors/token.interceptor';
 import { LogoutComponent } from './components/logout/logout.component';
+import {EncuestaService} from './services/encuesta.service';
 
 const  routes: Routes = [
   {
@@ -99,6 +100,7 @@ const  routes: Routes = [
   providers: [
     PensumsService, 
     UsuariosService,
+    EncuestaService,
     {
       provide:HTTP_INTERCEPTORS,
       useClass: TokenInterceptor,
