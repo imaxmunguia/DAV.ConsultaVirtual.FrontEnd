@@ -5,7 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { RouterModule, Routes } from '@angular/router';
 import { SlimLoadingBarModule } from 'ng2-slim-loading-bar';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { PensumsService } from './services/pensums.service';
 import { ReactiveFormsModule } from '@angular/forms';
 import { FormsModule }   from '@angular/forms';
@@ -22,6 +22,9 @@ import { SignUpComponent } from './components/sign-up/sign-up.component';
 import { CrearEncuestaComponent } from './components/encuestas/crear-encuesta/crear-encuesta.component';
 import { WeekDaySelectorComponent } from './components/week-day-selector/week-day-selector.component';
 import {NgxMaterialTimepickerModule} from 'ngx-material-timepicker';
+import {UsuariosService} from './services/usuarios.service';
+import { TokenInterceptor } from './interceptors/token.interceptor';
+import { LogoutComponent } from './components/logout/logout.component';
 
 const  routes: Routes = [
   {
@@ -39,6 +42,10 @@ const  routes: Routes = [
   {
     path: 'login',
     component: LoginComponent
+  },
+  {
+    path: 'logout',
+    component: LogoutComponent
   },
   {
     path: 'coordinador',
@@ -76,6 +83,7 @@ const  routes: Routes = [
     SignUpComponent,
     CrearEncuestaComponent,
     WeekDaySelectorComponent,
+    LogoutComponent,
   ],
   imports: [
     BrowserModule,
@@ -88,7 +96,15 @@ const  routes: Routes = [
     NgxMaterialTimepickerModule.forRoot(),
     BrowserAnimationsModule
   ],
-  providers: [PensumsService],
+  providers: [
+    PensumsService, 
+    UsuariosService,
+    {
+      provide:HTTP_INTERCEPTORS,
+      useClass: TokenInterceptor,
+      multi:true
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -22,10 +22,10 @@ export class PensumsService {
 
   constructor(private http: HttpClient) { }
 
-  agregarClaseEnPensum(id_carrera, des_carrera, id_clase, desc_clase, id_requisito, desc_requisito) {
+  agregarClaseEnPensum(id_carrera, desc_carrera, id_clase, desc_clase, id_requisito, desc_requisito) {
     const obj = {
       id_carrera: id_carrera,
-      des_carrera: des_carrera,
+      desc_carrera: desc_carrera,
       id_clase: id_clase,
       desc_clase: desc_clase,
       id_requisito: id_requisito,

@@ -10,31 +10,28 @@
                     {{pensum}}
             </h1>
           </div>
-            <form ng-submit="submit">
+            <form (ngSubmit)="submit()">
                 <div class="form-group">
-                    <input type="text" class="form-control" id="inputNombre" placeholder="Pedro">
+                    <input [(ngModel)]="user.cuenta" name="cuenta" type="text" class="form-control" id="inputNoCuenta" placeholder="2018010101">
                 </div>
                 <div class="form-group">
-                    <input type="text" class="form-control" id="inputApellido" placeholder="Perez">
+                    <input [(ngModel)]="user.nombre" name="nombre" type="text" class="form-control" id="inputNombre" placeholder="Pedro">
                 </div>
                 <div class="form-group">
-                    <input type="email" class="form-control" id="inputEmail" placeholder="Email Address">
+                    <input [(ngModel)]="user.apellido" name="apellido" type="text" class="form-control" id="inputApellido" placeholder="Perez">
                 </div>
                 <div class="form-group">
-                    <select class="form-control">
+                    <select [(ngModel)]="user.id_carrera" name="id_carrera" class="form-control">
                         <option ng-repeat="pensum in pensums">
                             {{pensum}}
                         </option>
                     </select>
                 </div>
                 <div class="form-group">
-                    <input type="text" class="form-control" id="inputNoCuenta" placeholder="2018010101">
-                </div>
+                    <input [(ngModel)]="user.correo" name="correo" type="email" class="form-control" id="inputEmail" placeholder="Email Address">
+                </div>                
                 <div class="form-group">  
-                    <input type="password" class="form-control" id="inputPassword" placeholder="Password">
-                </div>
-                <div class="form-group">  
-                    <input type="password" class="form-control" id="inputPassword" placeholder="Password">
+                    <input [(ngModel)]="user.clave" name="clave" type="password" class="form-control" id="inputPassword" placeholder="Password">
                 </div>
                 <button type="submit" class="btn btn-primary">Registrarme</button>
             </form>
