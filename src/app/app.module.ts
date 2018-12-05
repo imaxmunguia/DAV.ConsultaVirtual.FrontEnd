@@ -1,19 +1,29 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
+import { BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { PensumsEditComponent } from './components/pensums/pensums-edit/pensums-edit.component';
-import { PensumsCreateComponent } from './components/pensums/pensums-create/pensums-create.component';
-import { PensumsIndexComponent } from './components/pensums/pensums-index/pensums-index.component';
-
 import { RouterModule, Routes } from '@angular/router';
 import { SlimLoadingBarModule } from 'ng2-slim-loading-bar';
 import { HttpClientModule } from '@angular/common/http';
 import { PensumsService } from './services/pensums.service';
 import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule }   from '@angular/forms';
+import { PensumsEditComponent } from './components/pensums/pensums-edit/pensums-edit.component';
+import { PensumsCreateComponent } from './components/pensums/pensums-create/pensums-create.component';
+import { PensumsIndexComponent } from './components/pensums/pensums-index/pensums-index.component';
+import { LoginComponent } from './components/login/login.component';
+import { NavBarComponent } from './components/nav-bar/nav-bar.component';
+import { DashboardCoordinadorComponent } from './components/dashboard-coordinador/dashboard-coordinador.component';
+import { DashboardOptionComponent } from './components/dashboard-option/dashboard-option.component';
+import { DashboardAdministradorComponent } from './components/dashboard-administrador/dashboard-administrador.component';
+import { DashboardAlumnoComponent } from './components/dashboard-alumno/dashboard-alumno.component';
+import { SignUpComponent } from './components/sign-up/sign-up.component';
+import { CrearEncuestaComponent } from './components/encuestas/crear-encuesta/crear-encuesta.component';
+import { WeekDaySelectorComponent } from './components/week-day-selector/week-day-selector.component';
+import {NgxMaterialTimepickerModule} from 'ngx-material-timepicker';
 
-const routes: Routes = [
+const  routes: Routes = [
   {
     path: 'create',
     component: PensumsCreateComponent
@@ -25,15 +35,47 @@ const routes: Routes = [
   {
     path: 'index',
     component: PensumsIndexComponent
+  },
+  {
+    path: 'login',
+    component: LoginComponent
+  },
+  {
+    path: 'coordinador',
+    component: DashboardCoordinadorComponent
+  },
+  {
+    path: 'administrador',
+    component: DashboardAdministradorComponent
+  },
+  {
+    path: 'dashboard',
+    component: DashboardAlumnoComponent
+  },
+  {
+    path: 'signup',
+    component: SignUpComponent
+  },
+  {
+    path: 'encuesta/crear',
+    component: CrearEncuestaComponent
   }
 ];
-
 @NgModule({
   declarations: [
     AppComponent,
     PensumsEditComponent,
     PensumsCreateComponent,
-    PensumsIndexComponent
+    PensumsIndexComponent,
+    LoginComponent,
+    NavBarComponent,
+    DashboardCoordinadorComponent,
+    DashboardOptionComponent,
+    DashboardAdministradorComponent,
+    DashboardAlumnoComponent,
+    SignUpComponent,
+    CrearEncuestaComponent,
+    WeekDaySelectorComponent,
   ],
   imports: [
     BrowserModule,
@@ -41,7 +83,10 @@ const routes: Routes = [
     RouterModule.forRoot(routes),
     SlimLoadingBarModule,
     HttpClientModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    FormsModule,
+    NgxMaterialTimepickerModule.forRoot(),
+    BrowserAnimationsModule
   ],
   providers: [PensumsService],
   bootstrap: [AppComponent]

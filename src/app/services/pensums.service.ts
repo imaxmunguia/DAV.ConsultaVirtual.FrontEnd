@@ -2,6 +2,16 @@
 import { IPensums } from './../components/pensums/pensums-index/IPensums';
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { Observable } from "rxjs/Rx";
+
+// export class Serializable {
+//   constructor(json?: any) {
+//     if (json) {
+//       Object.assign(this, json);
+//     }
+//   }
+// }
+// export class Pensum extends Serializable {}
 
 @Injectable({
   providedIn: 'root'
@@ -24,10 +34,7 @@ export class PensumsService {
     this.http.post(`${this.uri}`, obj)
       .subscribe(res => console.log('Done'));
   }
-
-  listarTodasLasAsignaturas() {
-    return this
-           .http
-           .get(`${this.uri}`);
-    }
+  public listarTodasLasAsignaturas<T>(): Observable<T> {
+    return this.http.get<T>(this.uri);
+  }
 }
