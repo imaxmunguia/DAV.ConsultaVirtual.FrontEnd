@@ -11,9 +11,9 @@ export class GraficosService {
 
   constructor(private http: HttpClient) { }
 
-  listarResultadosEncuestas() {
+  listarResultadosEncuestas(id) {
     return this
       .http
-      .get(`${this.uri}`).map(res=>res);
+      .get(`${this.uri}/${id}`).map(res=>res);
   }
 }

@@ -74,7 +74,7 @@ const  routes: Routes = [
     component: CrearEncuestaComponent
   },
   {
-    path: 'graficos',
+    path: 'graficos/:id',
     component: GraficosIndexComponent
   },
   {
