@@ -27,6 +27,7 @@ import { TokenInterceptor } from './interceptors/token.interceptor';
 import { LogoutComponent } from './components/logout/logout.component';
 import {EncuestaService} from './services/encuesta.service';
 import { ListaEncuestasComponent } from './components/encuestas/lista-encuestas/lista-encuestas.component';
+import { CatedraticosService } from './services/catedraticos.service';
 
 const  routes: Routes = [
   {
@@ -111,6 +112,7 @@ const  routes: Routes = [
     PensumsService, 
     UsuariosService,
     EncuestaService,
+    CatedraticosService,
     {
       provide:HTTP_INTERCEPTORS,
       useClass: TokenInterceptor,
