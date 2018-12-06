@@ -1,0 +1,44 @@
+<div id="LoginForm">
+    <div class="container">
+      <div class="login-form">
+        <div class="main-div">
+          <div class="panel">
+            <h2>Registro de alumno</h2>
+            <p></p>
+            {{pensums}}
+            <h1 ng-repeat="pensum of pensums">
+                    {{pensum}}
+            </h1>
+          </div>
+            <form (ngSubmit)="submit()">
+                <div class="form-group">
+                    <input [(ngModel)]="user.cuenta" name="cuenta" type="text" class="form-control" id="inputNoCuenta" placeholder="Cuenta">
+                </div>
+                <div class="form-group">
+                    <input [(ngModel)]="user.nombre" name="nombre" type="text" class="form-control" id="inputNombre" placeholder="Nombre">
+                </div>
+                <div class="form-group">
+                    <input [(ngModel)]="user.apellido" name="apellido" type="text" class="form-control" id="inputApellido" placeholder="Apellido">
+                </div>
+                <div class="form-group">
+                    <select [(ngModel)]="user.id_carrera" name="id_carrera" class="form-control" placeholder="Elija su carrera">
+                        <option ng-repeat="pensum in pensums">
+                            {{pensum}}
+                        </option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <input [(ngModel)]="user.correo" name="correo" type="email" class="form-control" id="inputEmail" placeholder="Correo Electronico">
+                </div>                
+                <div class="form-group">  
+                    <input [(ngModel)]="user.clave" name="clave" type="password" class="form-control" id="inputPassword" placeholder="Contraseña">
+                </div>
+                <button type="submit" class="btn btn-primary">Registrarme</button>
+            </form>
+            <a routerLink="signup" class="nav-link" routerLinkActive="active">
+                Ya tienes una cuenta? Inicia Sesion!
+            </a>
+        </div>
+      </div>
+    </div>
+  </div>
