@@ -4,7 +4,11 @@
   <div class="col-xs-12">
     <form (ngSubmit)="submit()" action="row">
       <div class="col-xs-12 col-sm-6">
-          <div class="form-group">
+        <div class="form-group">
+            <label for="carrera">Carrera</label>
+              <input [(ngModel)]="encuesta.desc_carrera" name="desc_carrera" type="text" class="form-control" id="inputEmail" placeholder="">
+          </div>  
+        <div class="form-group">
             <label for="asignatura">Asignatura</label>
               <input [(ngModel)]="encuesta.desc_clase" name="desc_clase" type="email" class="form-control" id="inputEmail" placeholder="Asignatura">
           </div>
