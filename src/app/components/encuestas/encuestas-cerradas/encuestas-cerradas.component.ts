@@ -10,7 +10,7 @@ import {Encuesta} from '../../../models/encuesta.model';
 })
 export class EncuestasCerradasComponent implements OnInit {
   encuesta:Encuesta;
-  encuestas: Encuesta[] = [];
+  encuestas;
   encuestaService:EncuestaService;
   activa:boolean;
 
@@ -21,10 +21,9 @@ export class EncuestasCerradasComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.encuestaService.listarEncuestaPorEstado(this.activa);
-    (error)=>{
-      console.log('Error conectando')
-    }
+    this.encuestaService.listarEncuestaPorEstado().subscribe((encuestas)=>{
+      this.encuestas=encuestas;
+    });
   
   }
 

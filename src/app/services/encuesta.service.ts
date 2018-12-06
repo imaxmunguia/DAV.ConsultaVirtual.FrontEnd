@@ -36,8 +36,7 @@ export class EncuestaService {
     .subscribe(res=>console.log('Done'));
   }
 
-  listarEncuestaPorEstado(activa){
-    this.http.get(`${this.uri}` + '/:cerradas', activa)
-    .subscribe(res=>console.log('Done'));
+  listarEncuestaPorEstado(){
+    return this.http.get(`${this.uri}` + 'cerradas')
   }
 }
