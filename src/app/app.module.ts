@@ -1,3 +1,4 @@
+import { GraficosIndexComponent } from './components/graficos/graficos-index/graficos-index.component';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { BrowserAnimationsModule} from '@angular/platform-browser/animations';
@@ -7,6 +8,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { SlimLoadingBarModule } from 'ng2-slim-loading-bar';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { PensumsService } from './services/pensums.service';
+import { GraficosService } from './services/graficos.service';
 import { ReactiveFormsModule } from '@angular/forms';
 import { FormsModule }   from '@angular/forms';
 import { PensumsEditComponent } from './components/pensums/pensums-edit/pensums-edit.component';
@@ -75,6 +77,10 @@ const  routes: Routes = [
     component: CrearEncuestaComponent
   },
   {
+    path: 'graficos',
+    component: GraficosIndexComponent
+  },
+  {
     path:'encuesta/lista',
     component: ListaEncuestasComponent
   },
@@ -89,10 +95,11 @@ const  routes: Routes = [
   {
     path:'dashboard/perfil/clasesCursadas',
     component: PerfilComponent
-  }
+  },
+  {
     path:'dashboard/encuesta',
     component: EncuestasPendientesComponent
-  },
+  }
 
   /*{
     path:'editar/:id',
@@ -115,6 +122,7 @@ const  routes: Routes = [
     CrearEncuestaComponent,
     WeekDaySelectorComponent,
     LogoutComponent,
+    GraficosIndexComponent,
     ListaEncuestasComponent,
     EncuestasCerradasComponent,
     PerfilComponent,
@@ -141,7 +149,8 @@ const  routes: Routes = [
       provide:HTTP_INTERCEPTORS,
       useClass: TokenInterceptor,
       multi:true
-    }
+    },
+    GraficosService
   ],
   bootstrap: [AppComponent]
 })

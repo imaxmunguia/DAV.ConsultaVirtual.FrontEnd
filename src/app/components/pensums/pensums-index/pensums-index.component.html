@@ -22,7 +22,7 @@
           <td>{{ asignatura.id_requisito }}</td>
           <td>{{ asignatura.desc_requisito }}</td>
           <td><a [routerLink]="['/edit', asignatura._id]" class="btn btn-primary">Edit</a></td>
-          <td><a [routerLink]="" class="btn btn-danger">Delete</a></td>
+          <td><a [routerLink]="" (click)="deleteItem(asignatura._id)" class="btn btn-danger">Delete</a></td>
       </tr>
   </tbody>
 </table>
