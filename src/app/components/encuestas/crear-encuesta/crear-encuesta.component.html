@@ -2,26 +2,37 @@
   <h1 class="text-center">Isaias Andino</h1>
   <h2 class="text-center">Crear/Publicar Nueva encuesta</h2>
   <div class="col-xs-12">
-    <form action="row">
+    <form (ngSubmit)="submit()" action="row">
       <div class="col-xs-12 col-sm-6">
-          <strong>Encuesta No.</strong>{{encuesta.id}}
-          <div class="form-group">
+        <div class="form-group">
+            <label for="carrera">Carrera</label>
+              <input [(ngModel)]="encuesta.desc_carrera" name="desc_carrera" type="text" class="form-control" id="inputEmail" placeholder="">
+          </div>  
+        <div class="form-group">
             <label for="asignatura">Asignatura</label>
-              <input type="email" class="form-control" id="inputEmail" placeholder="Asignatura">
-          </div>
-          <div class="form-group">
-              <label for="asignatura">Catedratico</label>
-              <input type="email" class="form-control" id="inputEmail" placeholder="Catedratico">
-          </div>
+            <select [(ngModel)]="encuesta.desc_clase" name="desc_carrera" class="form-control" placeholder="Elija una clase">
+                <option *ngFor="let pensum of pensums">
+                    {{pensum.id_clase}} {{pensum.desc_clase}}
+                </option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="catedratico">Catedratico</label>
+            <select [(ngModel)]="encuesta.catedratico_clase" name="catedratico_clase" class="form-control" placeholder="Elija un catedratico">
+                <option *ngFor="let catedratico of catedraticos">
+                    {{catedratico.id_catedratico}} {{catedratico.nombre}}
+                </option>
+            </select>
+        </div>
           <div class="form-group">
               <label for="asignatura">Horario</label>
               <week-day-selector
-              [selectedDays]="encuesta.days"
+              [selectedDays]="encuesta.dias"
               (toggleSelectedDay)="toggleDay($event)"
               ></week-day-selector>
-              <input type="email" [value]="encuesta.getDate()" class="form-control" id="inputEmail" placeholder="Horario">
+              <input [(ngModel)]="encuesta.dias" name="dias" type="email" [value]="encuesta.getDate()" class="form-control" id="inputEmail" placeholder="Horario">
             </div>
-            <input [ngxTimepicker]="picker">
+            <input [(ngModel)]="encuesta.hora" name="hora" [ngxTimepicker]="picker">
             <ngx-material-timepicker #picker></ngx-material-timepicker>
           <hr>
 
@@ -29,20 +40,20 @@
       <div class="col-xs-12 col-sm-6">
           <div class="form-group">
               <label for="asignatura">Periodo</label>
-              <input type="email" class="form-control" id="inputEmail" placeholder="Periodo">
+              <input [(ngModel)]="encuesta.periodo" name="periodo" type="email" class="form-control" id="inputEmail" placeholder="Periodo">
           </div>
       </div>
       <h3>Fecha Apertura de Encuesta</h3>
       <div class="col-xs-12 col-sm-6">
           <div class="form-group">
               <label for="asignatura">Inicio</label>
-              <input type="email" class="form-control" id="inputEmail" placeholder="Inicio">
+              <input [(ngModel)]="encuesta.fecha_inicio" name="fecha_inicio" type="email" class="form-control" id="inputEmail" placeholder="Inicio">
           </div>
       </div>
       <div class="col-xs-12 col-sm-6">
           <div class="form-group">
               <label for="asignatura">Fin</label>
-              <input type="email" class="form-control" id="inputEmail" placeholder="Fin">
+              <input [(ngModel)]="encuesta.fecha_fin" name="fecha_fin" type="email" class="form-control" id="inputEmail" placeholder="Fin">
           </div>
       </div>
       <div class="col-xs-12 text-center">

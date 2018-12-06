@@ -25,11 +25,21 @@ export class UsuariosService {
   }
 
   setToken(token){
-    window.sessionStorage.setItem("token", token);
+    let savedToken=JSON.stringify(token);
+    window.sessionStorage.setItem("token", savedToken);
   }
 
   getToken(){
-    return window.sessionStorage.getItem("token");
+    let token=window.sessionStorage.getItem("token");
+    return JSON.parse(token);
+  }
+
+  isLoggedIn(){
+    let token=this.getToken();
+    if(typeof token!=='undefined'){
+      return true;
+    }
+    return false;
   }
 
   logout(){

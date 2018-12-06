@@ -1,15 +1,21 @@
 import { Component, OnInit } from '@angular/core';
+import {UsuariosService} from '../../services/usuarios.service';
 
 @Component({
-  selector: 'app-nav-bar',
+  selector: 'nav-bar',
   templateUrl: './nav-bar.component.html',
   styleUrls: ['./nav-bar.component.css']
 })
 export class NavBarComponent implements OnInit {
-
-  constructor() { }
+  usuariosService
+  loggedIn;
+  constructor(usuariosService:UsuariosService) {
+    this.usuariosService=usuariosService;
+  }
 
   ngOnInit() {
+    this.loggedIn=this.usuariosService.isLoggedIn();
+    console.log(this.loggedIn)
   }
 
 }

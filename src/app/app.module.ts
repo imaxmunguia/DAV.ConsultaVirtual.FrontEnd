@@ -27,6 +27,10 @@ import {NgxMaterialTimepickerModule} from 'ngx-material-timepicker';
 import {UsuariosService} from './services/usuarios.service';
 import { TokenInterceptor } from './interceptors/token.interceptor';
 import { LogoutComponent } from './components/logout/logout.component';
+import {EncuestaService} from './services/encuesta.service';
+import { ListaEncuestasComponent } from './components/encuestas/lista-encuestas/lista-encuestas.component';
+import { CatedraticosService } from './services/catedraticos.service';
+import { EncuestasCerradasComponent } from './components/encuestas/encuestas-cerradas/encuestas-cerradas.component';
 
 const  routes: Routes = [
   {
@@ -72,7 +76,19 @@ const  routes: Routes = [
   {
     path: 'graficos',
     component: GraficosIndexComponent
+  },
+  {
+    path:'encuesta/lista',
+    component: ListaEncuestasComponent
+  },
+  {
+    path:'encuesta/cerradas',
+    component: EncuestasCerradasComponent
   }
+  /*{
+    path:'editar/:id',
+    component: 
+  }*/
 ];
 @NgModule({
   declarations: [
@@ -90,7 +106,9 @@ const  routes: Routes = [
     CrearEncuestaComponent,
     WeekDaySelectorComponent,
     LogoutComponent,
-    GraficosIndexComponent
+    GraficosIndexComponent,
+    ListaEncuestasComponent,
+    EncuestasCerradasComponent,
   ],
   imports: [
     BrowserModule,
@@ -106,6 +124,8 @@ const  routes: Routes = [
   providers: [
     PensumsService, 
     UsuariosService,
+    EncuestaService,
+    CatedraticosService,
     {
       provide:HTTP_INTERCEPTORS,
       useClass: TokenInterceptor,
