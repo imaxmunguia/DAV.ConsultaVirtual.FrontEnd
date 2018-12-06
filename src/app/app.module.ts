@@ -29,6 +29,7 @@ import {EncuestaService} from './services/encuesta.service';
 import { ListaEncuestasComponent } from './components/encuestas/lista-encuestas/lista-encuestas.component';
 import { CatedraticosService } from './services/catedraticos.service';
 import { EncuestasCerradasComponent } from './components/encuestas/encuestas-cerradas/encuestas-cerradas.component';
+import { EncuestasPendientesComponent } from './components/dashboard-alumno/encuestas-pendientes/encuestas-pendientes.component';
 
 const  routes: Routes = [
   {
@@ -79,6 +80,11 @@ const  routes: Routes = [
     path:'encuesta/cerradas',
     component: EncuestasCerradasComponent
   },
+  {
+    path:'dashboard/encuesta',
+    component: EncuestasPendientesComponent
+  },
+
   /*{
     path:'editar/:id',
     component: 
@@ -102,6 +108,7 @@ const  routes: Routes = [
     LogoutComponent,
     ListaEncuestasComponent,
     EncuestasCerradasComponent,
+    EncuestasPendientesComponent,
   ],
   imports: [
     BrowserModule,
