@@ -23,7 +23,8 @@ export class LoginComponent implements OnInit {
   submit(){
     console.log('Usuario');
     this.usuariosService.login(this.user).subscribe((auth)=>{
-      this.usuariosService.setToken(auth['token']);
+      console.log('here')
+      this.usuariosService.setToken(auth);
        
       if (auth['perfil'] === 'Administrador'){
         this.router.navigate(['/administrador']);
