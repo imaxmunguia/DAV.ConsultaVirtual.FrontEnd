@@ -28,6 +28,7 @@ import { LogoutComponent } from './components/logout/logout.component';
 import {EncuestaService} from './services/encuesta.service';
 import { ListaEncuestasComponent } from './components/encuestas/lista-encuestas/lista-encuestas.component';
 import { CatedraticosService } from './services/catedraticos.service';
+import { EncuestasCerradasComponent } from './components/encuestas/encuestas-cerradas/encuestas-cerradas.component';
 
 const  routes: Routes = [
   {
@@ -74,6 +75,10 @@ const  routes: Routes = [
     path:'encuesta/lista',
     component: ListaEncuestasComponent
   },
+  {
+    path:'encuesta/cerradas',
+    component: EncuestasCerradasComponent
+  },
   /*{
     path:'editar/:id',
     component: 
@@ -96,6 +101,7 @@ const  routes: Routes = [
     WeekDaySelectorComponent,
     LogoutComponent,
     ListaEncuestasComponent,
+    EncuestasCerradasComponent,
   ],
   imports: [
     BrowserModule,
