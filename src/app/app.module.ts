@@ -84,6 +84,10 @@ const  routes: Routes = [
   {
     path:'encuesta/cerradas',
     component: EncuestasCerradasComponent
+  },
+  {
+    path:'dashboard/encuesta',
+    component:DashboardAlumnoComponent
   }
   /*{
     path:'editar/:id',
