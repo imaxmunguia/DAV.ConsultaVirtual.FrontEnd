@@ -19,6 +19,10 @@ export class UsuariosService {
   login(user){
     return this.http.post(this.uri + 'login', user);
   }
+
+  signup(user){
+    return this.http.post(this.uri + 'signup', user);
+  }
   
   public listarTodoLosUsuarios<T>(): Observable<T> {
     return this.http.get<T>(this.uri);
