@@ -32,6 +32,14 @@ export class UsuariosService {
     return window.sessionStorage.getItem("token");
   }
 
+  isLoggedIn(){
+    let token=this.getToken();
+    if(typeof token!=='undefined'){
+      return true;
+    }
+    return false;
+  }
+
   logout(){
     window.sessionStorage.removeItem("token");
   }
