@@ -1,3 +1,4 @@
+import { GraficosIndexComponent } from './components/graficos/graficos-index/graficos-index.component';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { BrowserAnimationsModule} from '@angular/platform-browser/animations';
@@ -67,6 +68,10 @@ const  routes: Routes = [
   {
     path: 'encuesta/crear',
     component: CrearEncuestaComponent
+  },
+  {
+    path: 'graficos',
+    component: GraficosIndexComponent
   }
 ];
 @NgModule({
@@ -85,6 +90,7 @@ const  routes: Routes = [
     CrearEncuestaComponent,
     WeekDaySelectorComponent,
     LogoutComponent,
+    GraficosIndexComponent
   ],
   imports: [
     BrowserModule,
