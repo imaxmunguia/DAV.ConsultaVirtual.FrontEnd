@@ -14,6 +14,6 @@ export class GraficosService {
   listarResultadosEncuestas() {
     return this
       .http
-      .get(`${this.uri}`);
+      .get(`${this.uri}`).map(res=>res);
   }
 }

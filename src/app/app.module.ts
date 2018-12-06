@@ -7,6 +7,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { SlimLoadingBarModule } from 'ng2-slim-loading-bar';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { PensumsService } from './services/pensums.service';
+import { GraficosService } from './services/graficos.service';
 import { ReactiveFormsModule } from '@angular/forms';
 import { FormsModule }   from '@angular/forms';
 import { PensumsEditComponent } from './components/pensums/pensums-edit/pensums-edit.component';
@@ -103,7 +104,8 @@ const  routes: Routes = [
       provide:HTTP_INTERCEPTORS,
       useClass: TokenInterceptor,
       multi:true
-    }
+    },
+    GraficosService
   ],
   bootstrap: [AppComponent]
 })
