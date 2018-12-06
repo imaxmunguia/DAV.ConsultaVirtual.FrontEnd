@@ -29,6 +29,8 @@ import {EncuestaService} from './services/encuesta.service';
 import { ListaEncuestasComponent } from './components/encuestas/lista-encuestas/lista-encuestas.component';
 import { CatedraticosService } from './services/catedraticos.service';
 import { EncuestasCerradasComponent } from './components/encuestas/encuestas-cerradas/encuestas-cerradas.component';
+import { PerfilComponent } from './components/dashboard-alumno/perfil/perfil.component';
+import { ClasesCursadasComponent } from './components/dashboard-alumno/clases-cursadas/clases-cursadas.component';
 
 const  routes: Routes = [
   {
@@ -79,10 +81,14 @@ const  routes: Routes = [
     path:'encuesta/cerradas',
     component: EncuestasCerradasComponent
   },
-  /*{
-    path:'editar/:id',
-    component: 
-  }*/
+  {
+    path:'dashboard/perfil',
+    component: PerfilComponent
+  },
+  {
+    path:'dashboard/perfil/clasesCursadas',
+    component: PerfilComponent
+  }
 ];
 @NgModule({
   declarations: [
@@ -102,6 +108,8 @@ const  routes: Routes = [
     LogoutComponent,
     ListaEncuestasComponent,
     EncuestasCerradasComponent,
+    PerfilComponent,
+    ClasesCursadasComponent,
   ],
   imports: [
     BrowserModule,
