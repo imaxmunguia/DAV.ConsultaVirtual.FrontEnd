@@ -1,6 +1,23 @@
 export interface IEncuestas {
-    id_carrera:   String ,
-    desc_carrera: String ,
-    desc_clase: String ,
-    id_requisito: [String]
+    activa: Boolean,
+    id_encuesta: Number,
+    fecha_inicio: Date,
+    fecha_fin: Date,
+    id_carrera: String,
+    id_catedratico: String,
+    periodo: Number,
+    desc_carrera: String,
+    id_clase: String,
+    desc_clase: String,
+    hora: String,
+    dias: [String],
+    catedratico_clase: String,
+    aceptacion: Number,
+    horario: Number,
+    dinero: Number,
+    campus: Number,
+    transporte: Number,
+    catedratico: Number,
+    otros: Number,
+    votos: Number
 }

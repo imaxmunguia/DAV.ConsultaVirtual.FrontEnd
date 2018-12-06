@@ -7,7 +7,7 @@ import 'rxjs/add/operator/map';
 })
 export class GraficosService {
 
-  uri = 'http://localhost:3000/api/pensums';
+  uri = 'http://localhost:3000/api/encuestas';
 
   constructor(private http: HttpClient) { }
 
