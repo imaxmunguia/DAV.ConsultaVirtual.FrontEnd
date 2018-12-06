@@ -36,6 +36,7 @@ export class CrearEncuestaComponent implements OnInit {
     this.encuesta.desc_clase = token['desc_clase'];
     this.encuesta.desc_carrera = token['desc_carrera'];
     this.mostrarPensum();
+    this.mostrarCatedraticos();
   }
   
   toggleDay(day:string):void {
