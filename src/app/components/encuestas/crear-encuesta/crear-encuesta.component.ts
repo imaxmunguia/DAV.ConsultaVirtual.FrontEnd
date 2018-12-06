@@ -14,18 +14,25 @@ export class CrearEncuestaComponent implements OnInit {
 
   constructor(encuestaService:EncuestaService, private router:Router){
     this.encuestaService = encuestaService;
+    //this.encuesta = new Encuesta();
   }
 
   ngOnInit() {
     this.encuesta= new Encuesta();
   }
+  
   toggleDay(day:string):void {
-    if(this.encuesta.days.indexOf(day)>=0){
-      let i=this.encuesta.days.indexOf(day);
-      this.encuesta.days.pop(i);
+    if(this.encuesta.dias.indexOf(day)>=0){
+      let i=this.encuesta.dias.indexOf(day);
+      this.encuesta.dias.pop(i);
     }else{
-      let i=this.encuesta.days.indexOf(day);
-      this.encuesta.days.push(day);
+      let i=this.encuesta.dias.indexOf(day);
+      this.encuesta.dias.push(day);
     }
+  }
+
+  submit(){
+    this.encuestaService.agregarEncuesta(this.encuesta);
+    //this.router.navigate('');
   }
 }
