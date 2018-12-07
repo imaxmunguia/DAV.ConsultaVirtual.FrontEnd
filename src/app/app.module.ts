@@ -103,7 +103,7 @@ const  routes: Routes = [
   },
 
   {
-    path:'dashboard/encuesta/completar',
+    path:'dashboard/encuesta/completar/:id',
     component: EncuestasCompletarComponent
   }
 
