@@ -10,6 +10,7 @@ import {UsuariosService} from '../../services/usuarios.service'
 })
 export class SignUpComponent implements OnInit {
   user:User;
+  error:String;
   usuariosService:UsuariosService;
   constructor(usuariosService:UsuariosService, private router:Router) {
     this.usuariosService = usuariosService; 
@@ -23,8 +24,12 @@ export class SignUpComponent implements OnInit {
 
   submit(){
     this.usuariosService.agregarUsuario(this.user);
-    this.usuariosService.login(this.user).subscribe((auth)=>{
-      this.usuariosService.setToken(auth['token']);
+    this.usuariosService.signup(this.user).subscribe((auth)=>{
+      if(typeof auth['error']!=='undefined'){
+        this.error=auth['error'];
+        return;
+      };
+      this.usuariosService.setToken(auth);
       this.router.navigate(['/dashboard']);  
     })
   }

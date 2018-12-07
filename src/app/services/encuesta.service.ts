@@ -9,6 +9,7 @@ import { Observable } from "rxjs/Rx";
 export class EncuestaService {
 
   uri = 'http://localhost:3000/api/encuestas/';
+  uriVoto = 'http://localhost:3000/api/votos/';
 
   constructor(private http:HttpClient) { }
 
@@ -32,11 +33,14 @@ export class EncuestaService {
   }
 
   listarEncuestaPorID(id_encuesta){
-    this.http.get(`${this.uri}` + '/:id', id_encuesta)
-    .subscribe(res=>console.log('Done'));
+    return this.http.get(`${this.uri}` + id_encuesta);
   }
 
   listarEncuestaPorEstado(){
     return this.http.get(`${this.uri}` + 'cerradas')
+  }
+
+  votar(id_encuesta,voto){
+    return this.http.post(this.uriVoto+id_encuesta,voto);
   }
 }

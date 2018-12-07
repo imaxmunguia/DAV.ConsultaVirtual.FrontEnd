@@ -34,6 +34,7 @@ import { EncuestasCerradasComponent } from './components/encuestas/encuestas-cer
 import { PerfilComponent } from './components/dashboard-alumno/perfil/perfil.component';
 import { ClasesCursadasComponent } from './components/dashboard-alumno/clases-cursadas/clases-cursadas.component';
 import { EncuestasPendientesComponent } from './components/dashboard-alumno/encuestas-pendientes/encuestas-pendientes.component';
+import { EncuestasCompletarComponent } from './components/dashboard-alumno/encuestas-completar/encuestas-completar.component';
 
 const  routes: Routes = [
   {
@@ -94,11 +95,16 @@ const  routes: Routes = [
   },
   {
     path:'dashboard/perfil/clasesCursadas',
-    component: PerfilComponent
+    component: ClasesCursadasComponent
   },
   {
     path:'dashboard/encuesta',
     component: EncuestasPendientesComponent
+  },
+
+  {
+    path:'dashboard/encuesta/completar/:id',
+    component: EncuestasCompletarComponent
   }
 
   /*{
@@ -128,6 +134,7 @@ const  routes: Routes = [
     PerfilComponent,
     ClasesCursadasComponent,
     EncuestasPendientesComponent,
+    EncuestasCompletarComponent,
   ],
   imports: [
     BrowserModule,

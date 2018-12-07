@@ -23,6 +23,7 @@ export class EncuestasPendientesComponent implements OnInit {
 
   ngOnInit() {
     this.encuestaService.listarTodasLasEncuestas().subscribe((encuestas)=>{
+      console.log(encuestas);
       this.encuestas=encuestas;
     });
   

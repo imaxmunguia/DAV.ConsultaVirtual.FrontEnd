@@ -23,9 +23,9 @@
                                     </div>
                                 </div>
                                 <div class="userData ml-3">
-                                    <h2 class="d-block" style="font-size: 1.5rem; font-weight: bold"><a href="javascript:void(0);">{{usuario.nombre}}</a></h2>
-                                    <h6 class="d-block"><a href="javascript:void(0)">1,500</a> Video Uploads</h6>
-                                    <h6 class="d-block"><a href="javascript:void(0)">300</a> Blog Posts</h6>
+                                    <h2 class="d-block" style="font-size: 1.5rem; font-weight: bold"></h2>
+                                    <h6 class="d-block"> Video Uploads</h6>
+                                    <h6 class="d-block"> Blog Posts</h6>
                                 </div>
                                 <div class="ml-auto">
                                     <input type="button" class="btn btn-primary d-none" id="btnDiscard" value="Discard Changes" />
@@ -37,14 +37,14 @@
                             <div class="col-12">
                                 <ul class="nav nav-tabs mb-4" id="myTab" role="tablist">
                                     <li class="nav-item">
-                                        <a class="nav-link active" id="basicInfo-tab" data-toggle="tab" [routerLink]="dashboard/perfil" role="tab" aria-controls="basicInfo" aria-selected="false">Mis Datos</a>
+                                        <a class="nav-link" id="basicInfo-tab" data-toggle="tab" [routerLink]="['/dashboard/perfil']" aria-selected="false">Mis Datos</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="nav-link" id="connectedServices-tab" data-toggle="tab" [routerLink]="dashboard/perfil/clasesCursadas" role="tab" aria-controls="connectedServices" aria-selected="true">Clases Cursadas</a>
+                                        <a class="nav-link active" id="connectedServices-tab" data-toggle="tab" [routerLink]="['/dashboard/perfil/clasesCursadas']" aria-selected="true">Clases Cursadas</a>
                                     </li>
                                 </ul>
                                 <div class="tab-content ml-1" id="myTabContent">
-                                    <div class="tab-pane fade show active" id="basicInfo" role="tabpanel" aria-labelledby="basicInfo-tab">
+                                    <div class="tab-pane fade" id="basicInfo" role="tabpanel" aria-labelledby="basicInfo-tab">
                                         
 
                                         <div class="row">
@@ -78,10 +78,10 @@
                                         </div>
                                         <hr/>
                                     </div>
-                                    <div class="tab-pane fade" id="connectedServices" role="tabpanel" aria-labelledby="ConnectedServices-tab">
+                                    <div class="tab-pane fade show active" id="connectedServices" role="tabpanel" aria-labelledby="ConnectedServices-tab">
                                       <div class="col-md-4">
                                         <form>
-                                          <h2>1. Customs Checkboxes</h2>
+                                          <h2>Marque todas las clases ya cursadas.</h2>
                                           <div class="form-check">
                                             <label>
                                               <input type="checkbox" name="check" checked> <span class="label-text">Option 01</span>
