@@ -17,8 +17,8 @@ usuarioService:UsuariosService;
   ngOnInit() {
     let token = this.usuarioService.getToken();
     this.usuario = new User();
-    this.usuario.nombre = token['nombre'];
-    this.usuario.apellido = token['apellido'];
+    this.usuario.nombres = token['nombres'];
+    this.usuario.apellidos = token['apellidos'];
   }
 
 }
