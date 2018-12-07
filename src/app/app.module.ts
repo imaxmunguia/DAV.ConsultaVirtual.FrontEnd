@@ -95,7 +95,7 @@ const  routes: Routes = [
   },
   {
     path:'dashboard/perfil/clasesCursadas',
-    component: PerfilComponent
+    component: ClasesCursadasComponent
   },
   {
     path:'dashboard/encuesta',
