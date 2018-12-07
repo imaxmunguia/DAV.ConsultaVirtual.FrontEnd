@@ -21,7 +21,7 @@ export class EncuestasCerradasComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.encuestaService.listarEncuestaPorEstado().subscribe((encuestas)=>{
+    this.encuestaService.listarTodasLasEncuestas().subscribe((encuestas)=>{
       this.encuestas=encuestas;
     });
   

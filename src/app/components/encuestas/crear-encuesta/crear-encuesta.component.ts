@@ -32,8 +32,8 @@ export class CrearEncuestaComponent implements OnInit {
     console.log(token);
     this.encuesta= new Encuesta();
     this.encuesta.id_carrera = token['id_carrera'];
-    this.encuesta.id_clase = token['id_clase'];
-    this.encuesta.desc_clase = token['desc_clase'];
+
+    
     this.encuesta.desc_carrera = token['desc_carrera'];
     this.mostrarPensum();
     this.mostrarCatedraticos();
@@ -66,6 +66,8 @@ export class CrearEncuestaComponent implements OnInit {
 
 
   submit(){
+    let pensum=this.pensums.filter((el)=> el._id=this.encuesta.id_clase);
+    this.encuesta.desc_clase =pensum[0].desc_clase; 
     this.encuestaService.agregarEncuesta(this.encuesta);
     this.router.navigate(['/encuesta/lista']);
   }

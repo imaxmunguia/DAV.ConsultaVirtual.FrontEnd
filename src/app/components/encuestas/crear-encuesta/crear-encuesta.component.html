@@ -10,8 +10,8 @@
           </div>  
         <div class="form-group">
             <label for="asignatura">Asignatura</label>
-            <select [(ngModel)]="encuesta.desc_clase" name="desc_carrera" class="form-control" placeholder="Elija una clase">
-                <option *ngFor="let pensum of pensums">
+            <select [(ngModel)]="encuesta.id_clase" name="desc_carrera" class="form-control" placeholder="Elija una clase">
+                <option *ngFor="let pensum of pensums" value="{{pensum._id}}">
                     {{pensum.id_clase}} {{pensum.desc_clase}}
                 </option>
             </select>

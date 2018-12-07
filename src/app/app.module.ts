@@ -86,7 +86,7 @@ const  routes: Routes = [
     component: ListaEncuestasComponent
   },
   {
-    path:'encuesta/cerradas',
+    path:'encuesta/listar',
     component: EncuestasCerradasComponent
   },
   {

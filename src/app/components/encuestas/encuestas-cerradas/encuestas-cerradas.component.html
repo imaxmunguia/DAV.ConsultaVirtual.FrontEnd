@@ -19,7 +19,6 @@
                    
                   <thead> 
                     <th><input type="checkbox" id="checkall" /></th>
-                    <th>ID</th>
                     <th>Carrera</th>
                     <th>Clase</th>
                     <th>Catedratico</th>
@@ -35,7 +34,6 @@
     <tbody>
       <tr *ngFor="let encuesta of encuestas">
         <td><input type="checkbox" class="checkthis" /></td>
-        <td>{{encuesta.id_encuesta}}</td>
         <td>{{encuesta.desc_carrera}}</td>
         <td>{{encuesta.desc_clase}}</td>
         <td>{{encuesta.catedratico_clase}}</td>
@@ -45,7 +43,10 @@
         <td>{{encuesta.fecha_inicio}}</td>
         <td>{{encuesta.fecha_fin}}</td>
         <td>{{encuesta.activa}}</td>
-        <td><a style="background-color: green; border-color: green; color: beige" class="btn btn-primary">Ver Estadistica</a></td>
+        <td>
+          <a routerLink='/graficos/{{encuesta._id}}' style="background-color: green; border-color: green; color: beige" class="btn btn-primary">
+            Ver Estadistica
+          </a></td>
         
       </tr>
     </tbody>
