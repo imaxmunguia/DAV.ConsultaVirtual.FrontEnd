@@ -32,8 +32,6 @@ export class CrearEncuestaComponent implements OnInit {
     console.log(token);
     this.encuesta= new Encuesta();
     this.encuesta.id_carrera = token['id_carrera'];
-
-    
     this.encuesta.desc_carrera = token['desc_carrera'];
     this.mostrarPensum();
     this.mostrarCatedraticos();
@@ -59,8 +57,9 @@ export class CrearEncuestaComponent implements OnInit {
   mostrarCatedraticos(){
     this.catedraticoservice.listarTodosLosCatedraticos().subscribe((catedraticos)=>{
       this.catedraticos=catedraticos;
+      console.log(this.catedraticos);
     })
-    console.log(this.catedraticos);
+    
   }
 
 

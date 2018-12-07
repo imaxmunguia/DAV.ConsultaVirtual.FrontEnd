@@ -20,7 +20,7 @@
             <label for="catedratico">Catedratico</label>
             <select [(ngModel)]="encuesta.catedratico_clase" name="catedratico_clase" class="form-control" placeholder="Elija un catedratico">
                 <option *ngFor="let catedratico of catedraticos">
-                    {{catedratico.id_catedratico}} {{catedratico.nombre}}
+                    {{catedratico.id_catedratico}} {{catedratico.nombre.nombres}} {{catedratico.nombre.apellidos}}
                 </option>
             </select>
         </div>
