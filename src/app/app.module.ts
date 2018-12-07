@@ -78,7 +78,7 @@ const  routes: Routes = [
     component: CrearEncuestaComponent
   },
   {
-    path: 'graficos',
+    path: 'graficos/:id',
     component: GraficosIndexComponent
   },
   {
@@ -106,11 +106,6 @@ const  routes: Routes = [
     path:'dashboard/encuesta/completar/:id',
     component: EncuestasCompletarComponent
   }
-
-  /*{
-    path:'editar/:id',
-    component: 
-  }*/
 ];
 @NgModule({
   declarations: [

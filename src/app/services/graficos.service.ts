@@ -7,13 +7,13 @@ import 'rxjs/add/operator/map';
 })
 export class GraficosService {
 
-  uri = 'http://localhost:3000/api/pensums';
+  uri = 'http://localhost:3000/api/encuestas';
 
   constructor(private http: HttpClient) { }
 
-  listarResultadosEncuestas() {
+  listarResultadosEncuestas(id) {
     return this
       .http
-      .get(`${this.uri}`).map(res=>res);
+      .get(`${this.uri}/${id}`).map(res=>res);
   }
 }
