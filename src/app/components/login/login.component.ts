@@ -10,6 +10,7 @@ import {Router} from '@angular/router';
 })
 export class LoginComponent implements OnInit {
   user: User;
+  error:String;
   usuariosService:UsuariosService;
   constructor(usuariosService: UsuariosService, private router:Router) {
     this.usuariosService = usuariosService;
@@ -23,7 +24,10 @@ export class LoginComponent implements OnInit {
   submit(){
     console.log('Usuario');
     this.usuariosService.login(this.user).subscribe((auth)=>{
-      console.log('here')
+      if(typeof auth['error']!=='undefined'){
+        this.error=auth['error'];
+        return;
+      };
       this.usuariosService.setToken(auth);
        
       if (auth['perfil'] === 'Administrador'){

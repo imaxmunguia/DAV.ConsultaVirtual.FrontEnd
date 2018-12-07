@@ -31,6 +31,10 @@ import {EncuestaService} from './services/encuesta.service';
 import { ListaEncuestasComponent } from './components/encuestas/lista-encuestas/lista-encuestas.component';
 import { CatedraticosService } from './services/catedraticos.service';
 import { EncuestasCerradasComponent } from './components/encuestas/encuestas-cerradas/encuestas-cerradas.component';
+import { PerfilComponent } from './components/dashboard-alumno/perfil/perfil.component';
+import { ClasesCursadasComponent } from './components/dashboard-alumno/clases-cursadas/clases-cursadas.component';
+import { EncuestasPendientesComponent } from './components/dashboard-alumno/encuestas-pendientes/encuestas-pendientes.component';
+import { EncuestasCompletarComponent } from './components/dashboard-alumno/encuestas-completar/encuestas-completar.component';
 
 const  routes: Routes = [
   {
@@ -86,13 +90,22 @@ const  routes: Routes = [
     component: EncuestasCerradasComponent
   },
   {
+    path:'dashboard/perfil',
+    component: PerfilComponent
+  },
+  {
+    path:'dashboard/perfil/clasesCursadas',
+    component: ClasesCursadasComponent
+  },
+  {
     path:'dashboard/encuesta',
-    component:DashboardAlumnoComponent
+    component: EncuestasPendientesComponent
+  },
+
+  {
+    path:'dashboard/encuesta/completar/:id',
+    component: EncuestasCompletarComponent
   }
-  /*{
-    path:'editar/:id',
-    component: 
-  }*/
 ];
 @NgModule({
   declarations: [
@@ -113,6 +126,10 @@ const  routes: Routes = [
     GraficosIndexComponent,
     ListaEncuestasComponent,
     EncuestasCerradasComponent,
+    PerfilComponent,
+    ClasesCursadasComponent,
+    EncuestasPendientesComponent,
+    EncuestasCompletarComponent,
   ],
   imports: [
     BrowserModule,
