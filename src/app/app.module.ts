@@ -46,7 +46,7 @@ const  routes: Routes = [
     component: PensumsEditComponent
   },
   {
-    path: 'index',
+    path: 'pensum/lista',
     component: PensumsIndexComponent
   },
   {

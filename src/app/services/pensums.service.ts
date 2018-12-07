@@ -70,4 +70,10 @@ export class PensumsService {
       .http
       .delete(`${this.uri}/${id}`);
   }
+
+  public listarTodosLosPensum(){
+    return this
+    .http
+    .get(`${this.uri}`+'/lista');
+  } 
 }
