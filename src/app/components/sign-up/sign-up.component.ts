@@ -23,7 +23,13 @@ export class SignUpComponent implements OnInit {
   }
 
   submit(){
-    this.usuariosService.agregarUsuario(this.user);
+    let carrera = this.user.id_carrera.split('_');
+    this.user.id_carrera=carrera[0];
+    this.user.desc_carrera=carrera[1];
+    this.user.nombre={
+      nombres:this.user.nombres,
+      apellidos:this.user.apellidos
+    }
     this.usuariosService.signup(this.user).subscribe((auth)=>{
       if(typeof auth['error']!=='undefined'){
         this.error=auth['error'];

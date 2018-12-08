@@ -42,7 +42,6 @@ export class NavBarComponent implements OnInit {
       this.menu=this.opciones[this.perfil];
       this.route=this.activatedRoute.snapshot.routeConfig.path;
     }
-    console.log(this.mostrarOpciones);
   }
 
   currentRoute(item){

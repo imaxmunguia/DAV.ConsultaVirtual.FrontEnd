@@ -22,5 +22,6 @@ export class RoutingSettingsGuard implements CanActivate  {
             this.router.navigate(['/login']);
         }
         return true;
+      }
    
 }

@@ -2,7 +2,6 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from "rxjs/Rx";
 
-
 @Injectable({
   providedIn: 'root'
 })
@@ -38,6 +37,10 @@ export class EncuestaService {
 
   listarEncuestaPorEstado(){
     return this.http.get(`${this.uri}` + 'cerradas')
+  }
+
+  toggle(id_encuesta){
+    return this.http.post(`${this.uri}` + 'toggle/'+id_encuesta,{});
   }
 
   votar(id_encuesta,voto){

@@ -12,8 +12,7 @@ export class UsuariosService {
   constructor(private http: HttpClient) { }
 
   agregarUsuario(user) {
-    this.http.post(`${this.uri}`, user)
-      .subscribe(res => console.log('Done'));
+    return this.http.post(`${this.uri}`, user);
   }
 
   login(user){
@@ -30,11 +29,11 @@ export class UsuariosService {
 
   setToken(token){
     let savedToken=JSON.stringify(token);
-    window.sessionStorage.setItem("token", savedToken);
+    window.localStorage.setItem("token", savedToken);
   }
 
   getToken(){
-    let token=window.sessionStorage.getItem("token");
+    let token=window.localStorage.getItem("token");
     return JSON.parse(token);
   }
 
@@ -54,7 +53,11 @@ export class UsuariosService {
     return false;
   }
 
+  delete(id_usuario){
+    return this.http.delete(this.uri+id_usuario, {});
+  }
+
   logout(){
-    window.sessionStorage.removeItem("token");
+    window.localStorage.removeItem("token");
   }
 }

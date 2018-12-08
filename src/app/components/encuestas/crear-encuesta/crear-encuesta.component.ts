@@ -6,6 +6,7 @@ import {UsuariosService} from '../../../services/usuarios.service';
 import {PensumsService} from '../../../services/pensums.service';
 import {CatedraticosService} from '../../../services/catedraticos.service';
 
+
 @Component({
   selector: 'app-crear-encuesta',
   templateUrl: './crear-encuesta.component.html',
@@ -25,12 +26,12 @@ export class CrearEncuestaComponent implements OnInit {
     this.usuarioservice = usuarioservice;
     this.pensumservice = pensumservice;
     this.catedraticoservice = catedraticoservice;
+    this.encuesta= new Encuesta();
   }
 
   ngOnInit() {
     let token = this.usuarioservice.getToken();
-    console.log(token);
-    this.encuesta= new Encuesta();
+    
     this.encuesta.id_carrera = token['id_carrera'];
     this.encuesta.desc_carrera = token['desc_carrera'];
     this.mostrarPensum();
@@ -51,13 +52,11 @@ export class CrearEncuestaComponent implements OnInit {
     this.pensumservice.listarTodasLasAsignaturas().subscribe((pensums)=>{
       this.pensums=pensums;
     })
-    console.log(this.pensums)
   }
 
   mostrarCatedraticos(){
     this.catedraticoservice.listarTodosLosCatedraticos().subscribe((catedraticos)=>{
       this.catedraticos=catedraticos;
-      console.log(this.catedraticos);
     })
     
   }
@@ -65,9 +64,19 @@ export class CrearEncuestaComponent implements OnInit {
 
 
   submit(){
-    let pensum=this.pensums.filter((el)=> el._id=this.encuesta.id_clase);
-    this.encuesta.desc_clase =pensum[0].desc_clase; 
+    let pensum=this.encuesta.id_clase.split('_');
+    this.encuesta.desc_clase =pensum[1];
+    this.encuesta.id_clase =pensum[0];
     this.encuestaService.agregarEncuesta(this.encuesta);
     this.router.navigate(['/encuesta/lista']);
+  }
+  publicar(){
+    this.encuesta.activa=true;
+    this.submit();
+  }
+
+
+  isNewRecord(){
+    return typeof this.encuesta._id==='undefined' || this.encuesta._id.length<0;
   }
 }

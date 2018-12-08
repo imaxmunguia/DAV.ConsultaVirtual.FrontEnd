@@ -6,7 +6,7 @@
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 <script src="http://getbootstrap.com/dist/js/bootstrap.min.js"></script>
 <nav-bar></nav-bar>
-<div class="container">
+<div class="container-fluid">
 	<div class="row" >
     
         
@@ -32,8 +32,7 @@
                     <th>Fecha de Inicio</th>
                     <th>Fecha de Cierre</th>
                     <th>Activa</th>
-                    <th>Editar</th>   
-                    <th>Eliminar</th>
+                    <th></th>   
                   </thead>
     <tbody>
       <tr *ngFor="let encuesta of encuestas">
@@ -47,9 +46,8 @@
         <td>{{encuesta.dias}}</td>
         <td>{{encuesta.fecha_inicio}}</td>
         <td>{{encuesta.fecha_fin}}</td>
-        <td>{{encuesta.activa}}</td>
-        <td><a [routerLink]="" class="btn btn-primary">Editar</a></td>
-        <td><a [routerLink]="" class="btn btn-danger">Eliminar</a></td>
+        <td>{{encuesta.activa? 'SI' : 'NO'}}</td>
+        <td><a (click)='toggle(encuesta._id)' class="btn btn-primary "  [ngClass]="{ 'btn-success':encuesta.activa}">{{accion(encuesta.activa)}}</a></td>
       </tr>
     </tbody>
         

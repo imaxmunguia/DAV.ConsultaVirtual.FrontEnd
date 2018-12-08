@@ -11,12 +11,13 @@
                 <div class="col">
                     <div class="form-group text-left">
                         <label for="carrera" >Carrera</label>
-                            <input [(ngModel)]="encuesta.desc_carrera" name="desc_carrera" type="text" class="form-control" id="inputEmail" placeholder="">
+                            <input disabled [value]="encuesta.desc_carrera" name="desc_carrera" type="text" class="form-control" id="inputEmail" placeholder="">
                         </div>  
                     <div class="form-group  text-left">
                         <label for="asignatura">Asignatura</label>
                         <select [(ngModel)]="encuesta.id_clase" name="desc_carrera" class="form-control" placeholder="Elija una clase">
-                            <option *ngFor="let pensum of pensums" value="{{pensum._id}}">
+                                <option value=""></option>
+                            <option *ngFor="let pensum of pensums" value="{{pensum._id}}_{{pensum.desc_clase}}">
                                 {{pensum.id_clase}} {{pensum.desc_clase}}
                             </option>
                         </select>
@@ -24,6 +25,7 @@
                     <div class="form-group  text-left">
                         <label for="catedratico">Catedratico</label>
                         <select [(ngModel)]="encuesta.catedratico_clase" name="catedratico_clase" class="form-control" placeholder="Elija un catedratico">
+                            <option value=""></option>
                             <option *ngFor="let catedratico of catedraticos">
                                 {{catedratico.id_catedratico}} {{catedratico.nombre.nombres}} {{catedratico.nombre.apellidos}}
                             </option>
@@ -54,17 +56,19 @@
                     <div class="col-12 col-sm-6">
                         <div class="form-group  text-left">
                             <label for="asignatura">Inicio</label>
-                            <input [(ngModel)]="encuesta.fecha_inicio" name="fecha_inicio" type="email" class="form-control" id="inputEmail" placeholder="Inicio">
+                            <input [(ngModel)]="encuesta.fecha_inicio" name="fecha_inicio" type="text" placeholder="Fecha Inicio" class="form-control" bsDatepicker>
                         </div>
                     </div>
                     <div class="col-12 col-sm-6">
                         <div class="form-group  text-left">
                             <label for="asignatura">Fin</label>
-                            <input [(ngModel)]="encuesta.fecha_fin" name="fecha_fin" type="email" class="form-control" id="inputEmail" placeholder="Fin">
+                            <input [(ngModel)]="encuesta.fecha_fin" name="fecha_fin" type="text" placeholder="Fecha Fin" class="form-control" bsDatepicker>
                         </div>
                     </div>
                     <div class="col-12 text-right">
-                        <button type="submit" class="btn btn-success">PUBLICAR</button>
+                        <button type="submit" class="btn btn-success">GUARDAR</button>
+                        &nbsp;
+                        <span *ngIf="isNewRecord()" (click)='publicar()' class="btn btn-primary">GUARDAR Y PUBLICAR</span>
                     </div>
                 </div>
             </div>

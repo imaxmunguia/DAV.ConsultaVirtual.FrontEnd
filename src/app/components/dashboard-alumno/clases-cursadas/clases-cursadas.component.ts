@@ -11,7 +11,7 @@ export class ClasesCursadasComponent implements OnInit {
   constructor(private pensumsService: PensumsService ) { }
 
   ngOnInit() {
-    this.pensumsService.clases().subscribe((clases){
+    this.pensumsService.clases().subscribe((clases)=>{
       this.clases=clases;
     });
   }
