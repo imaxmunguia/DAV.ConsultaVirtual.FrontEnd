@@ -42,6 +42,8 @@ import { ListaClasesComponent } from './components/pensums/clases/lista-clases/l
 import { ListarusuarioscoordinadoresComponent } from './components/dashboard-administrador/listarusuarioscoordinadores/listarusuarioscoordinadores.component';
 import { CrearusuarioscoordinadoresComponent } from './components/dashboard-administrador/crearusuarioscoordinadores/crearusuarioscoordinadores.component';
 import { VotosListaComponent } from './components/votos-lista/votos-lista.component';
+import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
+
 const  routes: Routes = [
   {
     path: 'create',
@@ -159,7 +161,7 @@ const  routes: Routes = [
     ListaClasesComponent,
     ListarusuarioscoordinadoresComponent,
     CrearusuarioscoordinadoresComponent,
-    VotosListaComponent,
+    VotosListaComponent
   ],
   imports: [
     BrowserModule,
@@ -170,8 +172,9 @@ const  routes: Routes = [
     ReactiveFormsModule,
     FormsModule,
     NgxMaterialTimepickerModule.forRoot(),
-    BrowserAnimationsModule    
-  ],
+    BrowserAnimationsModule,
+    BsDatepickerModule.forRoot()
+],
   providers: [
     PensumsService, 
     UsuariosService,

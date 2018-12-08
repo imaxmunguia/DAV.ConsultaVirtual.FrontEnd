@@ -29,11 +29,11 @@ export class UsuariosService {
 
   setToken(token){
     let savedToken=JSON.stringify(token);
-    window.sessionStorage.setItem("token", savedToken);
+    window.localStorage.setItem("token", savedToken);
   }
 
   getToken(){
-    let token=window.sessionStorage.getItem("token");
+    let token=window.localStorage.getItem("token");
     return JSON.parse(token);
   }
 
@@ -58,6 +58,6 @@ export class UsuariosService {
   }
 
   logout(){
-    window.sessionStorage.removeItem("token");
+    window.localStorage.removeItem("token");
   }
 }
