@@ -32,10 +32,10 @@ export class GraficosIndexComponent implements OnInit {
         
         this.encuestas = data;
 
-        const etiquetasGraficoPastel = ["De Acuerdo","No De Acuerdo"]
+        
         const valoresGraficoPastel = []
 
-        const etiquetasEjeX = ["Horario","Dinero","Ubicacion Campus","Transporte Campus","Docente","Otros"]
+        const etiquetasEjeX = ["Horario","Dinero","Campus","Transporte","Catedratico","Otros"]
         const valoresEjeX = []
 
         this.dif = parseInt(this.encuestas.votos.toString())-parseInt(this.encuestas.aceptacion.toString());
@@ -53,7 +53,7 @@ export class GraficosIndexComponent implements OnInit {
         console.log(data)
         console.log(etiquetasEjeX)
         console.log(valoresEjeX)
-
+        const etiquetasGraficoPastel = ["De Acuerdo ("+this.encuestas.aceptacion+")","No De Acuerdo "+this.dif+""]
         this.graficoBarra = new Chart('canvasBarra', {
           type: 'bar',
           data: {
