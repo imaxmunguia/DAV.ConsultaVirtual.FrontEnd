@@ -38,6 +38,8 @@ import { EncuestasCompletarComponent } from './components/dashboard-alumno/encue
 import {RoutingSettingsGuard} from './routingSettings';
 import { ClasesComponent } from './components/pensums/clases/clases.component';
 import { ListaClasesComponent } from './components/pensums/clases/lista-clases/lista-clases.component';
+import { ListarusuarioscoordinadoresComponent } from './components/dashboard-administrador/listarusuarioscoordinadores/listarusuarioscoordinadores.component';
+import { CrearusuarioscoordinadoresComponent } from './components/dashboard-administrador/crearusuarioscoordinadores/crearusuarioscoordinadores.component';
 const  routes: Routes = [
   {
     path: 'create',
@@ -117,7 +119,12 @@ const  routes: Routes = [
   {
     path:'pensum/clases/crear',
     component: ClasesComponent
+  },
+  {
+    path:'listausuarioscoordinadores',
+    component: ListarusuarioscoordinadoresComponent
   }
+  
 ];
 @NgModule({
   declarations: [
@@ -144,6 +151,8 @@ const  routes: Routes = [
     EncuestasCompletarComponent,
     ClasesComponent,
     ListaClasesComponent,
+    ListarusuarioscoordinadoresComponent,
+    CrearusuarioscoordinadoresComponent,
   ],
   imports: [
     BrowserModule,
