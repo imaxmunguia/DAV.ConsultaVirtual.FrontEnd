@@ -18,7 +18,7 @@ export class Encuesta {
   constructor() {
     this.hora='';
     this.dias = [];
-    this.activa = true;
+    this.activa = false;
   }
 
   deserialize(input: any) {

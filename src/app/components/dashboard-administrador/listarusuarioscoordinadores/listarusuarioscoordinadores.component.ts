@@ -20,14 +20,26 @@ export class ListarusuarioscoordinadoresComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.usuarioService.listarTodoLosUsuarios().subscribe((data:User[])=>{
-      this.usuarios = data;
-    },
-    (error)=>{
-      console.log('Error conectando')
-    }
-  );
+    this.getData()
   }
 
+  getData(){
+    this.usuarioService.listarTodoLosUsuarios().subscribe((data:User[])=>{
+      this.usuarios = data;
+      },
+      (error)=>{
+        console.log('Error conectando')
+      }
+    );
+  }
+
+  delete(id_usuario){
+    if(confirm('Esta Seguro de eliminar al usuario?')){
+      this.usuarioService.delete(id_usuario).subscribe((result)=>{
+        this.getData();
+      });
+    }
+    
+  }
 
 }

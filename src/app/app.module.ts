@@ -123,8 +123,12 @@ const  routes: Routes = [
     component: ClasesComponent
   },
   {
-    path:'listausuarioscoordinadores',
+    path:'usuarios',
     component: ListarusuarioscoordinadoresComponent
+  },
+  {
+    path:'usuario/crear',
+    component: CrearusuarioscoordinadoresComponent
   }
   
 ];

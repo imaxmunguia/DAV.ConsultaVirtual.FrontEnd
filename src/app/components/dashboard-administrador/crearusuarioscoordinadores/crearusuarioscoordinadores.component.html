@@ -1,3 +1,39 @@
-<p>
-  crearusuarioscoordinadores works!
-</p>
+<nav-bar></nav-bar>
+<div id="LoginForm">
+  <div class="container">
+    <div class="col-6 offset-3  ">
+    <div class="login-form">
+      <div class="main-div">
+        <div class="panel">
+          <h2>Registro de Coordinador</h2>
+        </div>
+          <form (ngSubmit)="submit()">
+              <div class="form-group">
+                  <input required [(ngModel)]="user.nombres" name="nombres" type="text" class="form-control" id="inputNombre" placeholder="Nombre">
+              </div>
+              <div class="form-group">
+                  <input required [(ngModel)]="user.apellidos" name="apellidos" type="text" class="form-control" id="inputApellido" placeholder="Apellido">
+              </div>
+              <div class="form-group">
+                  <select required [(ngModel)]="user.id_carrera" name="id_carrera" class="form-control" placeholder="Elija su carrera">
+                      <option value=""></option>
+                      <option value="I-06_Ingenieria Informatica">
+                          Ingenieria Informatica
+                      </option>
+                  </select>
+              </div>
+              <div class="form-group">
+                  <input required [(ngModel)]="user.correo" name="correo" type="email" class="form-control" id="inputEmail" placeholder="Correo Electronico">
+              </div>                
+              <div class="form-group">  
+                  <input required [(ngModel)]="user.clave" name="clave" type="password" class="form-control" id="inputPassword" placeholder="Contraseña">
+              </div>
+              <button type="submit" class="btn btn-primary">Registrar</button>
+              <div *ngIf="error">{{error}}</div>
+              
+          </form>
+      </div>
+    </div>
+    </div>
+  </div>
+</div>

@@ -12,8 +12,7 @@ export class UsuariosService {
   constructor(private http: HttpClient) { }
 
   agregarUsuario(user) {
-    this.http.post(`${this.uri}`, user)
-      .subscribe(res => console.log('Done'));
+    return this.http.post(`${this.uri}`, user);
   }
 
   login(user){
@@ -52,6 +51,10 @@ export class UsuariosService {
       return token['perfil'];
     }
     return false;
+  }
+
+  delete(id_usuario){
+    return this.http.delete(this.uri+id_usuario, {});
   }
 
   logout(){

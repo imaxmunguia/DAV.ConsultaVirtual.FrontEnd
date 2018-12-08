@@ -16,7 +16,8 @@
                     <div class="form-group  text-left">
                         <label for="asignatura">Asignatura</label>
                         <select [(ngModel)]="encuesta.id_clase" name="desc_carrera" class="form-control" placeholder="Elija una clase">
-                            <option *ngFor="let pensum of pensums" value="{{pensum._id}}">
+                                <option value=""></option>
+                            <option *ngFor="let pensum of pensums" value="{{pensum._id}}_{{pensum.desc_clase}}">
                                 {{pensum.id_clase}} {{pensum.desc_clase}}
                             </option>
                         </select>
@@ -67,7 +68,7 @@
                     <div class="col-12 text-right">
                         <button type="submit" class="btn btn-success">GUARDAR</button>
                         &nbsp;
-                        <button *ngIf="isNewRecord()" (click)='publicar' class="btn btn-primary">GUARDAR Y PUBLICAR</button>
+                        <span *ngIf="isNewRecord()" (click)='publicar()' class="btn btn-primary">GUARDAR Y PUBLICAR</span>
                     </div>
                 </div>
             </div>
