@@ -92,3 +92,10 @@ Inspired by http://dribbble.com/shots/890759-Ui-Kit-Metro/attachments/97174
   .white-red{
     color: #c11d1d;
 }
+.boton a, .boton button{
+    padding:5px;
+    border: 5px solid white;
+    border-radius: 25px;
+    background-color: white;
+    color:black;
+}

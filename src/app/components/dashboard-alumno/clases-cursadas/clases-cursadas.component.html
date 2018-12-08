@@ -13,25 +13,20 @@
                 <div class="card">
 
                     <div class="card-body">
-                        <div class="card-title mb-4">
-                            <div class="d-flex justify-content-start">
-                                <div class="image-container">
-                                    <img src="http://placehold.it/150x150" id="imgProfile" style="width: 150px; height: 150px" class="img-thumbnail" />
-                                    <div class="middle">
-                                        <input type="button" class="btn btn-secondary" id="btnChangePicture" value="Change" />
-                                        <input type="file" style="display: none;" id="profilePicture" name="file" />
+                            <div class="card-title mb-4">
+                                    <div class="d-flex justify-content-start">
+                                        <div class="image-container">
+                                            <img src="http://placehold.it/150x150" id="imgProfile" style="width: 150px; height: 150px" class="img-thumbnail" />
+                                            
+                                        </div>
+                                        <div class="userData ml-3">
+                                            <h2 class="d-block" style="font-size: 1.5rem; font-weight: bold">MI PERFIL</h2>
+                                        </div>
+                                        <div class="ml-auto">
+                                            <input type="button" class="btn btn-primary d-none" id="btnDiscard" value="Discard Changes" />
+                                        </div>
                                     </div>
                                 </div>
-                                <div class="userData ml-3">
-                                    <h2 class="d-block" style="font-size: 1.5rem; font-weight: bold"></h2>
-                                    <h6 class="d-block"> Video Uploads</h6>
-                                    <h6 class="d-block"> Blog Posts</h6>
-                                </div>
-                                <div class="ml-auto">
-                                    <input type="button" class="btn btn-primary d-none" id="btnDiscard" value="Discard Changes" />
-                                </div>
-                            </div>
-                        </div>
 
                         <div class="row">
                             <div class="col-12">
@@ -79,31 +74,12 @@
                                         <hr/>
                                     </div>
                                     <div class="tab-pane fade show active" id="connectedServices" role="tabpanel" aria-labelledby="ConnectedServices-tab">
-                                      <div class="col-md-4">
-                                        <form>
-                                          <h2>Marque todas las clases ya cursadas.</h2>
-                                          <div class="form-check">
-                                            <label>
-                                              <input type="checkbox" name="check" checked> <span class="label-text">Option 01</span>
-                                            </label>
+                                      <div class="col-12">
+                                          <h4>Marque todas las clases ya cursadas.</h4>
+                                          <div *ngFor="let clase of clases" class="col-4 form-check">
+                                                <label>{{clase.desc_clase}}</label>
+                                                <input  type="checkbox" name="check" checked> <span class="label-text">Option 01</span>
                                           </div>
-                                          <div class="form-check">
-                                            <label>
-                                              <input type="checkbox" name="check"> <span class="label-text">Option 02</span>
-                                            </label>
-                                          </div>
-                                          <div class="form-check">
-                                            <label>
-                                              <input type="checkbox" name="check"> <span class="label-text">Option 03</span>
-                                            </label>
-                                          </div>
-                                          <div class="form-check">
-                                            <label>
-                                              <input type="checkbox" name="check" disabled> <span class="label-text">Option 04</span>
-                                            </label>
-                                          </div>
-                                        </form>
-                                  
                                       </div>
                                     </div>
                                 </div>

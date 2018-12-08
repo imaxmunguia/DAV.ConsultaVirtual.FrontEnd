@@ -1,0 +1,12 @@
+.navbar{
+    position: fixed;
+    min-width: 100vw;
+    margin-left: -10px;
+    top: 0;
+}
+.active{
+    color:black !important;
+}
+a{
+    cursor:pointer;
+}

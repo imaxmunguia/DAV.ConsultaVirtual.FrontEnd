@@ -3,36 +3,36 @@
 <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
 <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
 <!------ Include the above in your HEAD tag ---------->
-<nav-bar></nav-bar>
+<nav-bar [mostrarOpciones]='false'></nav-bar>
 <div class="container">
     <div class="row" style= "display: flex ;  align-self: center;">
 		<div class="btn-group btn-group-justified">
-            <div class="btn-group">
+            <div class="btn-group boton">
                 <a routerLink="/encuesta/crear" class="btn btn-nav" routerLinkActive="active">
                     <span class="glyphicon glyphicon-new-window white-red"></span>
                     <p>Crear Encuesta</p>
                 </a>
             </div>
-            <div class="btn-group">
+            <div class="btn-group boton">
                 <a routerLink="/encuesta/lista" class="btn btn-nav" routerLinkActive="active">
                     <span class="glyphicon glyphicon-pencil white-red"></span>
                     <p>Modificar Encuesta</p>
                 </a>         
 
             </div>
-            <div class="btn-group">
+            <div class="btn-group boton">
                 <a routerLink="/encuesta/lista" class="btn btn-nav" routerLinkActive="active">
                     <span class="glyphicon glyphicon-trash white-red"></span>
                     <p>Eliminar Encuesta</p>
                 </a>                 
             </div>
-            <div class="btn-group">
-                <button type="button" class="btn btn-nav">
+            <div class="btn-group boton">
+                <a routerLink="/pensum/lista" class="btn btn-nav" routerLinkActive="active">
                     <span class="glyphicon glyphicon-list-alt white-red"></span>
-    			    <p>Lista Clases Pensum</p>
-                </button>
+                    <p>Pensums</p>
+                </a>
             </div>
-            <div class="btn-group">
+            <div class="btn-group boton">
                 <a routerLink="/encuesta/listar" class="btn btn-nav" routerLinkActive="active">
                     <span class="glyphicon glyphicon-eye-close white-red"></span>
                     <p>Encuestas</p>
