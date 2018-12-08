@@ -1,1 +1,34 @@
-
+<nav-bar ></nav-bar>
+<div class='container'>
+    <div class="col-12">
+        <div class="col-12">
+            <h2 class="text-center">Crear/Publicar Nueva Clase</h2>
+        </div>
+    </div>
+    <div class="col-12">
+        <form (ngSubmit)="submit()">
+            <div class="row">
+                <div class="col">
+                    <div class="form-group text-left">
+                        <label for="carrera" >Nombre</label>
+                            <input [(ngModel)]="clase.desc_clase" name="desc_clase" type="text" class="form-control" id="inputEmail" placeholder="">
+                        </div>  
+                    <div class="form-group  text-left">
+                        <label for="asignatura">Requisito para la clase</label>
+                        <select [(ngModel)]="clase.id_requisito" name="id_requisito" class="form-control" placeholder="Elija una clase">
+                            <option *ngFor="let clase of clases" value="{{clase.desc_clase}}">
+                                {{clase.desc_clase}}
+                            </option>
+                        </select>
+                    </div>
+                        
+                </div>
+              
+                    <div class="col-12 text-right">
+                        <button type="submit" class="btn btn-success">AGREGAR</button>
+                    </div>
+                </div>
+            
+        </form>
+    </div>
+</div>

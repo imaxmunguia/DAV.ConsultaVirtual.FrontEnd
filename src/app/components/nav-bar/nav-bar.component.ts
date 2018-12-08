@@ -26,7 +26,7 @@ export class NavBarComponent implements OnInit {
       ['Nueva encuesta','/encuesta/crear'],
       ['Modificar encuesta','/encuesta/editar'],
       ['Eliminar encuesta','/encuesta/eliminar'],
-      ['Pensums','/pensums'],
+      ['Pensums','/pensum/lista'],
       ['Encuestas encuesta',''],
     ]
   };

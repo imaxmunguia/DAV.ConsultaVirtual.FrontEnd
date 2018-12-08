@@ -20,6 +20,7 @@ export class PensumsService {
 
   uri = 'http://localhost:3000/api/pensums';
   clasesaprobadas = 'http://localhost:3000/api/clasesaprobadas';
+  clasesPensum = 'http://localhost:3000/api/pensums/clases';
 
   constructor(private http: HttpClient) { }
 
@@ -44,6 +45,15 @@ export class PensumsService {
 
   public listarTodasLasAsignaturas<T>(): Observable<T> {
     return this.http.get<T>(this.uri);
+  }
+
+  public mostrarClasesPensum<T>(): Observable<T> {
+    return this.http.get<T>(this.clasesPensum);
+  }
+
+  crearClase(clase){
+    this.http.post(`${this.clasesPensum}`, clase)
+      .subscribe(res => console.log('Done'));
   }
 
   editarAsignaturaEnPensum(id) {
