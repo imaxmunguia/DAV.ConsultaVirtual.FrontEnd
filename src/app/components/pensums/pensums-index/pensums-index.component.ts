@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { PensumsService } from './../../../services/pensums.service';
 import { IPensums } from './IPensums';
+import { Pensum } from 'src/app/models/pensum.model';
 
 
 @Component({
@@ -9,21 +10,25 @@ import { IPensums } from './IPensums';
   styleUrls: ['./pensums-index.component.css']
 })
 export class PensumsIndexComponent implements OnInit {
+  pensum:Pensum;
+  pensums: Pensum[] = [];
+  pensumService:PensumsService;
 
-  pensums: IPensums[];
-
-  constructor(private pensumsService: PensumsService) { }
+  constructor(pensumService: PensumsService) { 
+    this.pensumService = pensumService;
+    this.pensum=new Pensum();
+  }
 
   deleteItem(id) {
-    this.pensumsService.deleteItem(id).subscribe(res => {
+    this.pensumService.deleteItem(id).subscribe(res => {
       console.log('Deleted');
     });
   }
 
   ngOnInit() {
-    this.pensumsService
-      .listarTodasLasAsignaturas()
-      .subscribe((data: IPensums[]) => {
+    this.pensumService
+      .listarTodosLosPensum()
+      .subscribe((data: Pensum[]) => {
         this.pensums = data;
       });
   }

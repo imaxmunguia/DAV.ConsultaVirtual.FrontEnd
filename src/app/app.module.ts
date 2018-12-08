@@ -36,6 +36,8 @@ import { ClasesCursadasComponent } from './components/dashboard-alumno/clases-cu
 import { EncuestasPendientesComponent } from './components/dashboard-alumno/encuestas-pendientes/encuestas-pendientes.component';
 import { EncuestasCompletarComponent } from './components/dashboard-alumno/encuestas-completar/encuestas-completar.component';
 import {RoutingSettingsGuard} from './routingSettings';
+import { ClasesComponent } from './components/pensums/clases/clases.component';
+import { ListaClasesComponent } from './components/pensums/clases/lista-clases/lista-clases.component';
 const  routes: Routes = [
   {
     path: 'create',
@@ -46,7 +48,7 @@ const  routes: Routes = [
     component: PensumsEditComponent
   },
   {
-    path: 'index',
+    path: 'pensum/lista',
     component: PensumsIndexComponent
   },
   {
@@ -108,6 +110,14 @@ const  routes: Routes = [
   },
   { path: '',canActivate: [RoutingSettingsGuard],  component: LoginComponent, pathMatch: 'full' },
 
+  {
+    path:'pensum/clases/lista',
+    component: ListaClasesComponent
+  },
+  {
+    path:'pensum/clases/crear',
+    component: ClasesComponent
+  }
 ];
 @NgModule({
   declarations: [
@@ -132,6 +142,8 @@ const  routes: Routes = [
     ClasesCursadasComponent,
     EncuestasPendientesComponent,
     EncuestasCompletarComponent,
+    ClasesComponent,
+    ListaClasesComponent,
   ],
   imports: [
     BrowserModule,
