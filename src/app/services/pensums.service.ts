@@ -19,6 +19,7 @@ import { Observable } from "rxjs/Rx";
 export class PensumsService {
 
   uri = 'http://localhost:3000/api/pensums';
+  clasesaprobadas = 'http://localhost:3000/api/clasesaprobadas';
 
   constructor(private http: HttpClient) { }
 
@@ -64,7 +65,14 @@ export class PensumsService {
       .put(`${this.uri}/${id}`, obj)
       .subscribe(res => console.log('Done'));
   }
-
+  clases(){
+    return this.http.get(this.uri+'/cursadas');
+  }
+  toggle(id_clase){
+    let url=this.clasesaprobadas+'/toggle/'+id_clase;
+    console.log(url);
+    this.http.post(url,{}).subscribe(res => console.log('Done'));
+  }
   deleteItem(id) {
     return this
       .http
