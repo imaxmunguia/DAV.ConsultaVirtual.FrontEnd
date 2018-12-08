@@ -1,28 +1,28 @@
 <!-- index.component.html -->
 <nav-bar></nav-bar>
 
-<div class="container">
-        
-                <h2 class="text-center">Lista de Pensums</h2>
-               <br>
-    <table class="table table-hover">
-                <thead>
+<div class="container"> 
+    <h2 class="text-center">Lista de Pensums</h2>
+    <div class="table table-responsive">
+        <br>
+        <table class="table table-hover">
+            <thead>
                 <tr>
                     <th>Nombre Pensum</th>
                     <th>Carrera</th>
                     
                     <th colspan="2">Actions</th>
                 </tr>
-                </thead>
-              
-                <tbody>
-                    <tr *ngFor="let pensum of pensums">
-                          <td>{{ pensum.nombre }}</td>
-                        <td>{{ pensum.desc_carrera }}</td>
-                        
-                        <td><a [routerLink]="" class="btn btn-primary">Editar</a></td>
-                        <td><a [routerLink]="" class="btn btn-danger">Eliminar</a></td>
-                    </tr>
-                </tbody>
-              </table>
+            </thead>
+            <tbody>
+                <tr *ngFor="let pensum of pensums">
+                        <td>{{ pensum.nombre }}</td>
+                    <td>{{ pensum.desc_carrera }}</td>
+                    
+                    <td><a [routerLink]="['/pensum/clases/lista',pensum.id_carrera]" class="btn btn-primary">Editar</a></td>
+                    <td><a [routerLink]="['/pensum/clases/lista',pensum.id_carrera]" class="btn btn-danger">Eliminar</a></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
 </div>

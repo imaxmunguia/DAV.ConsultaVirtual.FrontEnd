@@ -5,30 +5,32 @@
             <h2 class="text-center">Crear/Publicar Nueva Clase</h2>
         </div>
     </div>
-    <div class="col-12">
+    <div class="col-6 offset-3">
         <form (ngSubmit)="submit()">
             <div class="row">
                 <div class="col">
                     <div class="form-group text-left">
+                        <label for="carrera" >Año</label>
+                        <input [(ngModel)]="clase.nombre" name="desc_clase" type="text" class="form-control" id="inputEmail" placeholder="">
+                    </div>
+                    <div class="form-group text-left">
                         <label for="carrera" >Nombre</label>
-                            <input [(ngModel)]="clase.desc_clase" name="desc_clase" type="text" class="form-control" id="inputEmail" placeholder="">
-                        </div>  
+                        <input [(ngModel)]="clase.desc_clase" name="desc_clase" type="text" class="form-control" id="inputEmail" placeholder="">
+                    </div>
                     <div class="form-group  text-left">
                         <label for="asignatura">Requisito para la clase</label>
-                        <select [(ngModel)]="clase.id_requisito" name="id_requisito" class="form-control" placeholder="Elija una clase">
-                            <option *ngFor="let clase of clases" value="{{clase.desc_clase}}">
+                        <select multiple [(ngModel)]="clase.id_requisito" name="id_requisito" class="form-control" placeholder="Elija una clase">
+                            <option value=""></option>
+                            <option *ngFor="let clase of clases" value="{{clase.id}}">
                                 {{clase.desc_clase}}
                             </option>
                         </select>
                     </div>
-                        
                 </div>
-              
-                    <div class="col-12 text-right">
-                        <button type="submit" class="btn btn-success">AGREGAR</button>
-                    </div>
+                <div class="col-12 text-right">
+                    <button type="submit" class="btn btn-success">AGREGAR</button>
                 </div>
-            
+            </div>
         </form>
     </div>
 </div>

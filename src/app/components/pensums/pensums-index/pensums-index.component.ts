@@ -30,6 +30,7 @@ export class PensumsIndexComponent implements OnInit {
       .listarTodosLosPensum()
       .subscribe((data: Pensum[]) => {
         this.pensums = data;
+        console.log(this.pensums);
       });
   }
 

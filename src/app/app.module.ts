@@ -117,7 +117,7 @@ const  routes: Routes = [
   { path: '',canActivate: [RoutingSettingsGuard],  component: LoginComponent, pathMatch: 'full' },
 
   {
-    path:'pensum/clases/lista',
+    path:'pensum/clases/lista/:id',
     component: ListaClasesComponent
   },
   {

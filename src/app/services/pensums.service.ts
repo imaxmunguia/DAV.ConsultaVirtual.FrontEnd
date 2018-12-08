@@ -52,8 +52,7 @@ export class PensumsService {
   }
 
   crearClase(clase){
-    this.http.post(`${this.clasesPensum}`, clase)
-      .subscribe(res => console.log('Done'));
+    return this.http.post(`${this.uri}`, clase);
   }
 
   editarAsignaturaEnPensum(id) {
@@ -80,7 +79,6 @@ export class PensumsService {
   }
   toggle(id_clase){
     let url=this.clasesaprobadas+'/toggle/'+id_clase;
-    console.log(url);
     this.http.post(url,{}).subscribe(res => console.log('Done'));
   }
   deleteItem(id) {
