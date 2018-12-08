@@ -18,8 +18,8 @@ usuarioService:UsuariosService;
     let token = this.usuarioService.getToken();
     let nombre=token['nombre'];
     this.usuario = new User();
-    this.usuario.nombre = nombre.nombres;
-    this.usuario.apellido = nombre.apellidos;
+    this.usuario.nombres = nombre.nombres;
+    this.usuario.apellidos = nombre.apellidos;
     this.usuario.desc_carrera=token['desc_carrera'];
   }
 
