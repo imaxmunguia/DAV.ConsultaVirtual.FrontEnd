@@ -46,6 +46,14 @@ export class UsuariosService {
     return false;
   }
 
+  getPerfil(){
+    let token=this.getToken();
+    if(typeof token!=='undefined'){
+      return token['perfil'];
+    }
+    return false;
+  }
+
   logout(){
     window.sessionStorage.removeItem("token");
   }

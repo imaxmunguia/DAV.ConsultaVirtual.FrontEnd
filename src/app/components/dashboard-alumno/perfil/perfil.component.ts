@@ -16,9 +16,11 @@ usuarioService:UsuariosService;
 
   ngOnInit() {
     let token = this.usuarioService.getToken();
+    let nombre=token['nombre'];
     this.usuario = new User();
-    this.usuario.nombres = token['nombres'];
-    this.usuario.apellidos = token['apellidos'];
+    this.usuario.nombre = nombre.nombres;
+    this.usuario.apellido = nombre.apellidos;
+    this.usuario.desc_carrera=token['desc_carrera'];
   }
 
 }

@@ -1,9 +1,15 @@
-<nav class="navbar navbar-expand-sm bg-light">
-  <div class="container-fluid">
-    <ul class="navbar-nav">
-      <li *ngIf="loggedIn" class="nav-item">
-          <app-logout></app-logout>
-        </li> 
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li *ngIf="mostrarOpciones" class="nav-item">
+        <a routerLink ='' class="nav-link" >Inicio</a>
+      </li>
+      <li *ngFor="let item of  menu" class="nav-item">
+          <a  *ngIf="mostrarOpciones" routerLink ={{item[1]}} class="nav-link"  [ngClass]="{'active': currentRoute(item[1])}">{{item[0]}}</a>
+        </li>
+      <li *ngIf="loggedIn" class="nav-item pull-right">
+        <app-logout></app-logout>
+      </li>
     </ul>
   </div>
 </nav>

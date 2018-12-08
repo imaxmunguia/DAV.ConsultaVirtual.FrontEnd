@@ -35,9 +35,9 @@ import { PerfilComponent } from './components/dashboard-alumno/perfil/perfil.com
 import { ClasesCursadasComponent } from './components/dashboard-alumno/clases-cursadas/clases-cursadas.component';
 import { EncuestasPendientesComponent } from './components/dashboard-alumno/encuestas-pendientes/encuestas-pendientes.component';
 import { EncuestasCompletarComponent } from './components/dashboard-alumno/encuestas-completar/encuestas-completar.component';
+import {RoutingSettingsGuard} from './routingSettings';
 import { ClasesComponent } from './components/pensums/clases/clases.component';
 import { ListaClasesComponent } from './components/pensums/clases/lista-clases/lista-clases.component';
-
 const  routes: Routes = [
   {
     path: 'create',
@@ -108,6 +108,8 @@ const  routes: Routes = [
     path:'dashboard/encuesta/completar/:id',
     component: EncuestasCompletarComponent
   },
+  { path: '',canActivate: [RoutingSettingsGuard],  component: LoginComponent, pathMatch: 'full' },
+
   {
     path:'pensum/clases/lista',
     component: ListaClasesComponent
@@ -152,13 +154,14 @@ const  routes: Routes = [
     ReactiveFormsModule,
     FormsModule,
     NgxMaterialTimepickerModule.forRoot(),
-    BrowserAnimationsModule
+    BrowserAnimationsModule    
   ],
   providers: [
     PensumsService, 
     UsuariosService,
     EncuestaService,
     CatedraticosService,
+    RoutingSettingsGuard,
     {
       provide:HTTP_INTERCEPTORS,
       useClass: TokenInterceptor,
