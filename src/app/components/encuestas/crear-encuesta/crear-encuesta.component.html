@@ -11,7 +11,7 @@
                 <div class="col">
                     <div class="form-group text-left">
                         <label for="carrera" >Carrera</label>
-                            <input [(ngModel)]="encuesta.desc_carrera" name="desc_carrera" type="text" class="form-control" id="inputEmail" placeholder="">
+                            <input disabled [value]="encuesta.desc_carrera" name="desc_carrera" type="text" class="form-control" id="inputEmail" placeholder="">
                         </div>  
                     <div class="form-group  text-left">
                         <label for="asignatura">Asignatura</label>
@@ -24,6 +24,7 @@
                     <div class="form-group  text-left">
                         <label for="catedratico">Catedratico</label>
                         <select [(ngModel)]="encuesta.catedratico_clase" name="catedratico_clase" class="form-control" placeholder="Elija un catedratico">
+                            <option value=""></option>
                             <option *ngFor="let catedratico of catedraticos">
                                 {{catedratico.id_catedratico}} {{catedratico.nombre.nombres}} {{catedratico.nombre.apellidos}}
                             </option>
@@ -64,7 +65,9 @@
                         </div>
                     </div>
                     <div class="col-12 text-right">
-                        <button type="submit" class="btn btn-success">PUBLICAR</button>
+                        <button type="submit" class="btn btn-success">GUARDAR</button>
+                        &nbsp;
+                        <button *ngIf="isNewRecord()" (click)='publicar' class="btn btn-primary">GUARDAR Y PUBLICAR</button>
                     </div>
                 </div>
             </div>

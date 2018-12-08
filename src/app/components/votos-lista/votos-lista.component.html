@@ -1,0 +1,40 @@
+<hr>
+<div class="container-fluid">
+  <div class="table table-responsive">
+    <table class="table table-striped table-condensed table-bordered">
+      <thead class="thead-dark">
+        <tr>
+          <th>Email</th>
+          <th>Acepto?</th>
+          <th colspan="6">
+            Razones
+          </th>
+          <th>Observacion</th>
+        </tr>
+        <tr>
+          <th colspan="2"></th>
+          <th>Horario</th>
+          <th>Dinero</th>
+          <th>Campus</th>
+          <th>Transporte</th>
+          <th>Catedratico</th>
+          <th>Otros</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let voto of votos">
+          <td>{{voto.correo}}</td>
+          <td class="text-success" ngClass="{'text-danger':voto.aceptacion}">{{voto.aceptacion? 'SI': 'NO'}}</td>
+          <td>{{voto.horario}}</td>
+          <td>{{voto.dinero}}</td>
+          <td>{{voto.campus}}</td>
+          <td>{{voto.transporte}}</td>
+          <td>{{voto.catedratico}}</td>
+          <td>{{voto.otros}}</td>
+          <td>{{voto.observacion}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

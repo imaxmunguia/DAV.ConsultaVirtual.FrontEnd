@@ -9,6 +9,7 @@ import { SlimLoadingBarModule } from 'ng2-slim-loading-bar';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { PensumsService } from './services/pensums.service';
 import { GraficosService } from './services/graficos.service';
+import { VotosService } from './services/votos.service';
 import { ReactiveFormsModule } from '@angular/forms';
 import { FormsModule }   from '@angular/forms';
 import { PensumsEditComponent } from './components/pensums/pensums-edit/pensums-edit.component';
@@ -40,6 +41,7 @@ import { ClasesComponent } from './components/pensums/clases/clases.component';
 import { ListaClasesComponent } from './components/pensums/clases/lista-clases/lista-clases.component';
 import { ListarusuarioscoordinadoresComponent } from './components/dashboard-administrador/listarusuarioscoordinadores/listarusuarioscoordinadores.component';
 import { CrearusuarioscoordinadoresComponent } from './components/dashboard-administrador/crearusuarioscoordinadores/crearusuarioscoordinadores.component';
+import { VotosListaComponent } from './components/votos-lista/votos-lista.component';
 const  routes: Routes = [
   {
     path: 'create',
@@ -153,6 +155,7 @@ const  routes: Routes = [
     ListaClasesComponent,
     ListarusuarioscoordinadoresComponent,
     CrearusuarioscoordinadoresComponent,
+    VotosListaComponent,
   ],
   imports: [
     BrowserModule,
@@ -170,6 +173,7 @@ const  routes: Routes = [
     UsuariosService,
     EncuestaService,
     CatedraticosService,
+    VotosService,
     RoutingSettingsGuard,
     {
       provide:HTTP_INTERCEPTORS,

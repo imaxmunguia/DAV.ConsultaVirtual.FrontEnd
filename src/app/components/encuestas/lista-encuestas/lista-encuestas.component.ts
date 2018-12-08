@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {EncuestaService} from '../../../services/encuesta.service';
 import {Router} from '@angular/router';
 import {Encuesta} from '../../../models/encuesta.model';
+import { load } from '@angular/core/src/render3';
 
 @Component({
   selector: 'app-lista-encuestas',
@@ -19,6 +20,9 @@ export class ListaEncuestasComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.load();
+  }
+  load(){
     this.encuestaService.listarTodasLasEncuestas().subscribe((data:Encuesta[])=>{
       this.encuestas = data;
     },
@@ -26,6 +30,15 @@ export class ListaEncuestasComponent implements OnInit {
       console.log('Error conectando')
     }
   );
+  }
+  accion(estado){
+    return estado? 'CERRAR' : 'PUBLICAR';
+  }
+
+  toggle(id_encuesta){
+    this.encuestaService.toggle(id_encuesta).subscribe((result)=>{
+      this.load();
+    });
   }
 
 
